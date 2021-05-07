@@ -11,18 +11,14 @@ body {
   height: 100vh;
 }
 
-.hidden {
-  display: none;
-}
-
 /* HERO IMAGE  */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/tech-girl.jpg");
   height: 100%;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
 }
 /* HERO TEXT */
@@ -62,6 +58,19 @@ span {
 @keyframes caret {
   50% {
     border-color: transparent;
+  }
+}
+
+/*  MEDIA QUERY */
+@media only screen and (max-width: 800px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../images/tech-girl-mobile.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
   }
 }
 @media only screen and (max-width: 600px) {
