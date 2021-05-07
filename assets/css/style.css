@@ -10,6 +10,11 @@ body {
   margin: 0;
   height: 100vh;
 }
+
+.hidden {
+  display: none;
+}
+
 /* HERO IMAGE  */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -33,7 +38,7 @@ body {
   text-transform: uppercase;
 }
 /* HERO-TEXT BUTTON */
-.hero-text button {
+#quiz-btn {
   border: none;
   outline: 0;
   display: inline-block;
@@ -45,7 +50,7 @@ body {
   border-radius: 15px;
 }
 
-.hero-text button:hover {
+#quiz-btn:hover {
   border: 2px solid white;
 }
 /* TEXT ANIMATION */
