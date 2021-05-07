@@ -5,7 +5,7 @@
 body {
   margin: 0;
   height: 70vh;
-  background-image: url("../images/code.jpg");
+  background-image: url("../images/tech-girl.jpg");
   background-size: cover;
 }
 .hero-image {
@@ -18,7 +18,7 @@ body {
   position: relative;
   margin: 10%;
   height: 70vh;
-}
+} 
 
 .hero-text {
   text-align: center;
@@ -43,4 +43,60 @@ body {
 .hero-text button:hover {
   background-color: #555;
   color: white;
+}
+
+.try-again-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px black;
+ 
+}
+
+.card {
+  /* border: 2px solid red; */
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: #207d8a;
+}
+.card-text {
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px 20px;
+  text-align: justify;
+}
+
+.card-title{
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: x-large;
+  margin: 10px 10px
+}
+
+.image {
+  padding: 10px;
+ 
+}
+
+.btn-primary{
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-weight: 500;
+ text-align: justify;
+ color:black;
+ margin-left: 80px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
