@@ -42,7 +42,7 @@ let answerThree = document.getElementById('answerThree')
 let answerFour = document.getElementById('answerFour')
 let radioBtns = document.getElementsByClassName('reset-btn')
 let answer;
-
+let availableQuestions = [];
 
 function nextQuestion() {
     for(i=0; i<radioBtns.length; i++ ) {
@@ -128,3 +128,14 @@ function checkQuestions(){
         result.style.display="inline-block"
     }
 }
+
+
+fetch("assets/data/questions.json")
+.then((res) => {
+    loadedQuestions = res.json(); 
+    })
+  .then((loadedQuestions) => {
+      let questionsArray = loadedQuestions.questionList 
+      console.log(questionsArray)
+  
+})
