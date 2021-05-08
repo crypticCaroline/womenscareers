@@ -7,7 +7,7 @@ let jobList = [{
     points: 0,
     groups: ["web", "design"]
 }, {
-    role: 'manger',
+    role: 'manager',
     points: 0,
     groups: ["web", "maths", "computers"]
 }, {
@@ -58,6 +58,7 @@ function addResult(answer) {
 
 function showResult() {
     calculateResult()
+    formatResults()
     showResultsModal()
 }
 
@@ -67,9 +68,30 @@ function calculateResult() {
         return  b.points - a.points;
     });
 }
+let jobRole;
+function formatResults(){
 
+    if (finalResult[0].role == "cyber") {
+        jobRole = "cyber";
+    } else if (finalResult[0].role == "UX") {
+        jobRole = "UX";
+    } else if (finalResult[0].role == "manager") {
+        jobRole = "manager";
+    } else if (finalResult[0].role == "software") {
+        jobRole = "software";
+    } else if (finalResult[0].role == "game") {
+        jobRole = "game";
+    } else if (finalResult[0].role == "system") {
+        jobRole = "system";
+    } else if (finalResult[0].role == "data") {
+        jobRole = "data";
+    }
 
-function showResultModal() {
+    console.log(jobRole)
+
+}
+
+function showResultsModal() {
 
 }
 
