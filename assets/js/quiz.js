@@ -1,3 +1,15 @@
+let finalResult;
+let questionNumber = 0
+const next = document.getElementById('next')
+const result = document.getElementById('results-btn')
+const question = document.getElementById('question')
+let answerOne = document.getElementById('answerOne')
+let answerTwo = document.getElementById('answerTwo')
+let answerThree = document.getElementById('answerThree')
+let answerFour = document.getElementById('answerFour')
+let radioBtns = document.getElementsByClassName('reset-btn')
+let answer;
+
 
 let jobList = [{
     role: 'cyber',
@@ -30,19 +42,6 @@ let jobList = [{
 }]
 
 
-let finalResult;
-let questionNumber = 0
-const next = document.getElementById('next')
-const result = document.getElementById('results-btn')
-const question = document.getElementById('question')
-let answerOne = document.getElementById('answerOne')
-let answerTwo = document.getElementById('answerTwo')
-let answerThree = document.getElementById('answerThree')
-let answerFour = document.getElementById('answerFour')
-let radioBtns = document.getElementsByClassName('reset-btn')
-let answer;
-
-
 function nextQuestion() {
     for(i=0; i<radioBtns.length; i++ ) {
         if(radioBtns[i].checked == true) {
@@ -64,7 +63,6 @@ function buildQuestion() {
     
 
 }
-
 
 function addResult(answer) {
     for (var i = 0; i < jobList.length; i++) {
@@ -107,7 +105,15 @@ function formatResults(){
 }
 
 function showResultsModal() { 
-    
+    resultsModal = document.getElementById('results-modal')
+    jobHeading = document.getElementById('job-title')
+    jobContent = document.getElementById("job-content")
+    jobImage = document.getElementById("job-image")
+
+    // jobHeading.innerHTML = jobRoleOne.heading
+    // jobContent.innerHTML = jobRoleOne
+    resultsModal.style.display = "flex";
+
 
 }
 
@@ -122,7 +128,7 @@ function resetRadio(){
 
 
 function checkQuestions(){
-    if (questionNumber > 8) {
+    if (questionNumber > 2) {
         next.style.display = "none"
         result.style.display="inline-block"
     }
