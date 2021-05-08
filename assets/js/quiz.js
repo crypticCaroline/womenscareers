@@ -33,8 +33,7 @@ let jobList = [{
 let finalResult;
 let questionNumber = 0
 const next = document.getElementById('next')
-const result = document.getElementById('result-btn')
-result.addEventListener(onclick, showResult)
+const result = document.getElementById('results-btn')
 const question = document.getElementById('question')
 let answerOne = document.getElementById('answerOne')
 let answerTwo = document.getElementById('answerTwo')
@@ -123,7 +122,7 @@ function resetRadio(){
 
 
 function checkQuestions(){
-    if (questionNumber > 9) {
+    if (questionNumber > 8) {
         next.style.display = "none"
         result.style.display="inline-block"
     }
