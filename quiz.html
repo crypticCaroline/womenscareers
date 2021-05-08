@@ -10,63 +10,35 @@
 </head>
 
 <body>
-
-    <div class="hero-image">
         <section>
             <div id="quiz-container">
                 <h2>Question goes here</h2>
-<<<<<<< HEAD
-                <form class="question">
-                    <input type="radio" id="" name="question-one" value="">
+                <form onsubmit="return false;">
+                    <input type="radio" id="" name="question-one" value="manager">
                     <label for="">answer 1</label>
                     <br>
-                    <input type="radio" id="" name="question-one" value="">
+                    <input type="radio" id="" name="question-one" value="maths">
                     <label for="">answer 2</label>
                     <br>
-                    <input type="radio" id="" name="question-one" value="">
+                    <input type="radio" id="" name="question-one" value="web">
                     <label for="">answer 3</label>
                     <br>
-                    <input type="radio" id="" name="question-one" value="">
+                    <input type="radio" id="" name="question-one" value="cyber">
                     <label for="">answer 4</label>
                     <br>
-                    <input type="radio" id="" name="question-one" value="">
-                    <label for="">answer 5</label>
-                    <br>
-                    <input type="radio" id="" name="question-one" value="">
-                    <label for="">answer 6</label>
-                    <br>
-                    <input type="radio" id="" name="question-one" value="">
-                    <label for="">answer 7</label>
+                    
+                    <button id="next" onclick=nextQuestion() type="submit">Next</button>
                 </form>
-                <a href="#" class="next-btn">Next question</a>
-=======
-                <form onsubmit="return false;">
-            <input type="radio" id="" name="question-one" value="manager">
-            <label for="">answer 1</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="maths">
-            <label for="">answer 2</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="web">
-            <label for="">answer 3</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="cyber">
-            <label for="">answer 4</label>
-            <br>
 
-        <button id="next" onclick=nextQuestion() type="submit">Next</button>
-        </form>
-        
-        <a type="submit" id="showResults" href="results.html">View Results</a>
-                <a href="#" class="quiz-btn">Next question</a>
->>>>>>> fad132dbed27384c5e1600539d1c15e932375268
+                <a type="submit" id="showResults" href="results.html">View Results</a>
+                <a href="#" class="next-btn">Next question</a>
             </div>
         </section>
     </div>
 
     <footer></footer>
     <script src="assets/js/quiz.js"></script>
-    
+
 </body>
 
 </html>
