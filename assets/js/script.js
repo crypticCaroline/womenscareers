@@ -42,5 +42,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   // start the text animation
-  StartTextAnimation(2);
+  StartTextAnimation(0);
 });

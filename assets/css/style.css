@@ -10,14 +10,15 @@ body {
   margin: 0;
   height: 100vh;
 }
+
 /* HERO IMAGE  */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/tech-girl.jpg");
   height: 100%;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
 }
 /* HERO TEXT */
@@ -33,7 +34,7 @@ body {
   text-transform: uppercase;
 }
 /* HERO-TEXT BUTTON */
-.hero-text button {
+#quiz-btn {
   border: none;
   outline: 0;
   display: inline-block;
@@ -45,7 +46,7 @@ body {
   border-radius: 15px;
 }
 
-.hero-text button:hover {
+#quiz-btn:hover {
   border: 2px solid white;
 }
 /* TEXT ANIMATION */
@@ -57,6 +58,19 @@ span {
 @keyframes caret {
   50% {
     border-color: transparent;
+  }
+}
+
+/*  MEDIA QUERY */
+@media only screen and (max-width: 800px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../images/tech-girl-mobile.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
   }
 }
 @media only screen and (max-width: 600px) {
