@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Womens Careers</title>
+
   </head>
   <body>
     <div class="hero-image">
       <div class="hero-text">
         <h1></h1>
-        <button class="hidden">Take The Quiz!</button>
+        <a id="quiz-btn" class="hidden" href="quiz.html">Take The Quiz!</a>
+      </div>
+      <!-- Modal for displaying questions -->
+      <div id="question-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            natus dicta debitis ducimus? Error vero quis ipsa asperiores
+            dignissimos voluptate deserunt fuga illo laboriosam. Labore
+            temporibus quidem perferendis saepe doloremque!
+          </p>
+        </div>
       </div>
     </div>
     <script src="assets/js/script.js"></script>
