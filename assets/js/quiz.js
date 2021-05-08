@@ -2,7 +2,7 @@
 let jobList = [{
     role: 'cyber',
     points: 0,
-    groups: ["web", "maths", "computers"]
+    groups: ["web", "maths", "manager"]
 }, {
     role: 'UX',
     points: 0,
@@ -33,37 +33,36 @@ let jobList = [{
 let finalResult;
 let questionNumber = 0
 const next = document.getElementById('next')
-const result = document.getElementById('showResults')
+const result = document.getElementById('result-btn')
 result.addEventListener(onclick, showResult)
 const question = document.getElementById('question')
 let answerOne = document.getElementById('answerOne')
 let answerTwo = document.getElementById('answerTwo')
 let answerThree = document.getElementById('answerThree')
 let answerFour = document.getElementById('answerFour')
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    document.getElementById("demo").innerHTML = myObj.name;
-  }
-};
-xmlhttp.open("GET", "questions.json", true);
-xmlhttp.send();
+let radioBtns = document.getElementsByClassName('reset-btn')
+let answer;
+
 
 function nextQuestion() {
-    let answer = document.querySelector('[name="question-one"]:checked').value
+    for(i=0; i<radioBtns.length; i++ ) {
+        if(radioBtns[i].checked == true) {
+            answer = radioBtns[i].value
+        } 
+    }
+    if (!answer) {
+        alert("Please select an option")
+        return
+    }
     addResult(answer)
+    resetRadio()
     questionNumber++
+    checkQuestions()
     buildQuestion()
-    console.log(jobList)
 }
 
 function buildQuestion() {
-    question.innerHTML = questionData.questionList[questionNumber].question
-    answerOne.innerHTML = questionData.questionList[questionNumber].answerOne
-    answerTwo.innerHTML = questionData.questionList[questionNumber].answerTwo
-    console.log(question)
-    console.log(answerOne)
+    
 
 }
 
@@ -94,6 +93,7 @@ function calculateResult() {
     finalResult.sort(function (a, b) {
         return  b.points - a.points;
     });
+    console.log(finalResult)
 }
 
 function formatResults(){
@@ -112,6 +112,19 @@ function showResultsModal() {
 
 }
 
-function selectOption() {
-    // Message to user to select option
+function resetRadio(){
+    let radioBtns = document.getElementsByClassName('reset-btn')
+    for(i=0; i<radioBtns.length; i++ ) {
+        if(radioBtns[i].checked = true) {
+            radioBtns[i].checked = false;
+        }
+    }
+}
+
+
+function checkQuestions(){
+    if (questionNumber > 9) {
+        next.style.display = "none"
+        result.style.display="inline-block"
+    }
 }

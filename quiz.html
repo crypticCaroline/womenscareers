@@ -16,23 +16,23 @@
             <div id="quiz-container">
                 <h2 id="question">Question goes here</h2>
                 <form onsubmit="return false;">
-            <input type="radio" id="" name="question-one" value="manager">
+            <input type="radio" id="" name="question-one" value="manager" class="reset-btn" >
             <label id="answerOne" for="">answer 1</label>
             <br>
-            <input type="radio" id="" name="question-one" value="maths">
+            <input type="radio" id="" name="question-one" class="reset-btn"  value="maths">
             <label id="answerTwo" for="">answer 2</label>
             <br>
-            <input type="radio" id="" name="question-one" value="web">
+            <input type="radio" id="" name="question-one" class="reset-btn"  value="web">
             <label id="answerThree"  for="">answer 3</label>
             <br>
-            <input type="radio" id="" name="question-one" value="cyber">
+            <input type="radio" id="" name="question-one"  class="reset-btn" value="cyber">
             <label id="answerFour" for="">answer 4</label>
             <br>
 
         <button id="next" onclick=nextQuestion() class="quiz-btn" type="submit">Next</button>
         </form>
         
-        <button type="submit" id="showResults" onclick=showResult() >View Results</button>
+        <button type="submit" id="result-btn" onclick=showResult() >View Results</button>
             </div>
         </section>
     </div>
