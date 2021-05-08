@@ -217,6 +217,10 @@ span {
  
 }
 
+#results-modal {
+    justify-content: space-around;
+}
+
 .card {
   /* border: 2px solid red; */
   margin: 0 auto;
@@ -261,7 +265,24 @@ span {
 
 #results-btn {
     display:none;
+
 }
+#results-modal {
+    background:rgba(0,0,0,.7);
+    animation: zoomIn .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+
 
 @media only screen and (max-width: 600px) {
   .hero-text {
