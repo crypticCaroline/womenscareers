@@ -1,3 +1,4 @@
+
 let jobList = [{
     role: 'cyber',
     points: 0,
@@ -30,14 +31,40 @@ let jobList = [{
 
 
 let finalResult;
+let questionNumber = 0
 const next = document.getElementById('next')
 const result = document.getElementById('showResults')
 result.addEventListener(onclick, showResult)
+const question = document.getElementById('question')
+let answerOne = document.getElementById('answerOne')
+let answerTwo = document.getElementById('answerTwo')
+let answerThree = document.getElementById('answerThree')
+let answerFour = document.getElementById('answerFour')
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    document.getElementById("demo").innerHTML = myObj.name;
+  }
+};
+xmlhttp.open("GET", "questions.json", true);
+xmlhttp.send();
 
 function nextQuestion() {
     let answer = document.querySelector('[name="question-one"]:checked').value
     addResult(answer)
+    questionNumber++
+    buildQuestion()
     console.log(jobList)
+}
+
+function buildQuestion() {
+    question.innerHTML = questionData.questionList[questionNumber].question
+    answerOne.innerHTML = questionData.questionList[questionNumber].answerOne
+    answerTwo.innerHTML = questionData.questionList[questionNumber].answerTwo
+    console.log(question)
+    console.log(answerOne)
+
 }
 
 
@@ -68,30 +95,20 @@ function calculateResult() {
         return  b.points - a.points;
     });
 }
-let jobRole;
+
 function formatResults(){
-
-    if (finalResult[0].role == "cyber") {
-        jobRole = "cyber";
-    } else if (finalResult[0].role == "UX") {
-        jobRole = "UX";
-    } else if (finalResult[0].role == "manager") {
-        jobRole = "manager";
-    } else if (finalResult[0].role == "software") {
-        jobRole = "software";
-    } else if (finalResult[0].role == "game") {
-        jobRole = "game";
-    } else if (finalResult[0].role == "system") {
-        jobRole = "system";
-    } else if (finalResult[0].role == "data") {
-        jobRole = "data";
-    }
-
-    console.log(jobRole)
+    var jobRoleOne = finalResult[0].role
+    var jobRoleTwo = finalResult[1].role
+    var jobRoleThree = finalResult[2].role
+    var jobRoleFour = finalResult[3].role
+    var jobRoleFive = finalResult[4].role
+    var jvarobRoleSix = finalResult[5].role
+    var jobRoleSeven = finalResult[6].role
 
 }
 
-function showResultsModal() {
+function showResultsModal() { 
+    
 
 }
 
