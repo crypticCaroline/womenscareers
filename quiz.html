@@ -9,13 +9,21 @@
     <title>Quiz</title>
 </head>
 
+<<<<<<< HEAD
 <body>
 
     <div class="hero-image">
         <section>
+=======
+<body id="quiz">
+    <h1 id="quiz-title">Find your perfect tech role!</h1>
+    <section>
+        <div class="vertical-center">
+>>>>>>> 040622917752d9400bdcd0814ae57933bc7786c6
             <div id="quiz-container">
                 <h2 id="question">Question goes here</h2>
                 <form onsubmit="return false;">
+<<<<<<< HEAD
             <input type="radio" id="" name="question-one" value="manager" class="reset-btn" >
             <label id="answerOne" for="">answer 1</label>
             <br>
@@ -33,8 +41,33 @@
         </form>
         
         <button type="submit" id="result-btn" onclick=showResult() >View Results</button>
+=======
+                    <ul>
+                        <li>
+                            <input type="radio" class="reset-btn" name="question-one" value="manager">
+                            <label for="">answer 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" class="reset-btn" name="question-one" value="maths">
+                            <label for="">answer 2</label></li>
+                        <li>
+                            <input type="radio" class="reset-btn" name="question-one" value="web">
+                            <label for="">answer 3</label>
+                        </li>
+                        <li>
+                            <input type="radio" class="reset-btn" name="question-one" value="cyber">
+                            <label for="">answer 4</label></ul>
+                        </li>                    
+                    <br>
+
+                    <button id="next" onclick=nextQuestion() class="next-btn" type="submit">Next</button>
+                </form>
+
+                <button type="submit" id="results-btn" onclick=showResult() class="next-btn">View Results</button>
+>>>>>>> 040622917752d9400bdcd0814ae57933bc7786c6
             </div>
-        </section>
+        </div>
+    </section>
     </div>
 
     <footer></footer>
