@@ -1,7 +1,8 @@
+
 let jobList = [{
     role: 'cyber',
     points: 0,
-    groups: ["web", "maths", "computers"]
+    groups: ["web", "maths", "manager"]
 }, {
     role: 'UX',
     points: 0,
@@ -30,14 +31,39 @@ let jobList = [{
 
 
 let finalResult;
+let questionNumber = 0
 const next = document.getElementById('next')
-const result = document.getElementById('showResults')
+const result = document.getElementById('result-btn')
 result.addEventListener(onclick, showResult)
+const question = document.getElementById('question')
+let answerOne = document.getElementById('answerOne')
+let answerTwo = document.getElementById('answerTwo')
+let answerThree = document.getElementById('answerThree')
+let answerFour = document.getElementById('answerFour')
+let radioBtns = document.getElementsByClassName('reset-btn')
+let answer;
+
 
 function nextQuestion() {
-    let answer = document.querySelector('[name="question-one"]:checked').value
+    for(i=0; i<radioBtns.length; i++ ) {
+        if(radioBtns[i].checked == true) {
+            answer = radioBtns[i].value
+        } 
+    }
+    if (!answer) {
+        alert("Please select an option")
+        return
+    }
     addResult(answer)
-    console.log(jobList)
+    resetRadio()
+    questionNumber++
+    checkQuestions()
+    buildQuestion()
+}
+
+function buildQuestion() {
+    
+
 }
 
 
@@ -67,34 +93,38 @@ function calculateResult() {
     finalResult.sort(function (a, b) {
         return  b.points - a.points;
     });
+    console.log(finalResult)
 }
-let jobRole;
+
 function formatResults(){
+    var jobRoleOne = finalResult[0].role
+    var jobRoleTwo = finalResult[1].role
+    var jobRoleThree = finalResult[2].role
+    var jobRoleFour = finalResult[3].role
+    var jobRoleFive = finalResult[4].role
+    var jvarobRoleSix = finalResult[5].role
+    var jobRoleSeven = finalResult[6].role
 
-    if (finalResult[0].role == "cyber") {
-        jobRole = "cyber";
-    } else if (finalResult[0].role == "UX") {
-        jobRole = "UX";
-    } else if (finalResult[0].role == "manager") {
-        jobRole = "manager";
-    } else if (finalResult[0].role == "software") {
-        jobRole = "software";
-    } else if (finalResult[0].role == "game") {
-        jobRole = "game";
-    } else if (finalResult[0].role == "system") {
-        jobRole = "system";
-    } else if (finalResult[0].role == "data") {
-        jobRole = "data";
+}
+
+function showResultsModal() { 
+    
+
+}
+
+function resetRadio(){
+    let radioBtns = document.getElementsByClassName('reset-btn')
+    for(i=0; i<radioBtns.length; i++ ) {
+        if(radioBtns[i].checked = true) {
+            radioBtns[i].checked = false;
+        }
     }
-
-    console.log(jobRole)
-
 }
 
-function showResultsModal() {
 
-}
-
-function selectOption() {
-    // Message to user to select option
+function checkQuestions(){
+    if (questionNumber > 9) {
+        next.style.display = "none"
+        result.style.display="inline-block"
+    }
 }
