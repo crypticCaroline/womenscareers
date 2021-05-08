@@ -258,6 +258,11 @@ span {
   justify-content: center;
   align-items: center;
 }
+
+#result-btn {
+    display:none;
+}
+
 @media only screen and (max-width: 600px) {
   .hero-text {
     font-size: 1rem;
