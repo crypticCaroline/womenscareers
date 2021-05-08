@@ -96,18 +96,25 @@ span {
   margin: auto;
   width: 60%;
   border: 1px solid #caf0f8;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: rgba(11, 82, 91, .7);
+  position: relative;
+  top: 50px;
+  text-align: center;
+  color: #caf0f8;
 }
 
-#quiz-container h2 {
-  color: #caf0f8;
-  text-align: center;
-}
-
-.question {
-  color: #caf0f8;
-  text-align: center;
+.next-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #0b525b;
+  background-color: #caf0f8;
+  cursor: pointer;
+  border-radius: 15px;
+  width: fit-content;
+  margin-top: 30px;
 }
 
 /*  MEDIA QUERY */
@@ -162,7 +169,6 @@ span {
   text-decoration: none;
   cursor: pointer;
 }
-=======
 
 .try-again-btn {
   border: none;
