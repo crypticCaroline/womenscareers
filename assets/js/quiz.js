@@ -107,8 +107,8 @@ function formatResults(){
 }
 
 function showResultsModal() { 
-    
-    
+    resultsModal = document.getElementById('results-modal')
+    resultsModal.style.display = "flex";   
 
 }
 
@@ -123,7 +123,7 @@ function resetRadio(){
 
 
 function checkQuestions(){
-    if (questionNumber > 8) {
+    if (questionNumber > 2) {
         next.style.display = "none"
         result.style.display="inline-block"
     }
