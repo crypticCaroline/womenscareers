@@ -61,6 +61,25 @@ span {
   }
 }
 
+/* QUIZ */
+#quiz-container {
+  margin: auto;
+  width: 60%;
+  border: 1px solid #caf0f8;
+  border-radius: 5px;
+  background-color: rgba(11, 82, 91, .7);
+}
+
+#quiz-container h2 {
+  color: #caf0f8;
+  text-align: center;
+}
+
+.question {
+  color: #caf0f8;
+  text-align: center;
+}
+
 /*  MEDIA QUERY */
 @media only screen and (max-width: 800px) {
   .hero-image {
