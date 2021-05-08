@@ -7,7 +7,7 @@ let jobList = [{
     points: 0,
     groups: ["web", "design"]
 }, {
-    role: 'manager',
+    role: 'manger',
     points: 0,
     groups: ["web", "maths", "computers"]
 }, {
@@ -30,10 +30,16 @@ let jobList = [{
 
 
 let finalResult;
-const answer = document.getElementById('answer').value
-const showAnswer = document.getElementById('showAnswer')
-answer.addEventListener(click, addResult)
-showAnswer.addEventListener(click, showAnswer)
+const next = document.getElementById('next')
+const result = document.getElementById('showResults')
+result.addEventListener(onclick, showResult)
+
+function nextQuestion() {
+    let answer = document.querySelector('[name="question-one"]:checked').value
+    addResult(answer)
+    console.log(jobList)
+}
+
 
 function addResult(answer) {
     for (var i = 0; i < jobList.length; i++) {
