@@ -10,11 +10,9 @@ body {
   margin: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/tech-girl.jpg");
-  height: 100%;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: relative;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -152,14 +150,13 @@ span {
   body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url("../images/tech-girl-mobile.jpg");
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative;
   }
 }
-
+@media only screen and (max-width: 600px) {
+  .hero-text {
+    font-size: 1rem;
+  }
+}
 .try-again-btn {
   border: none;
   outline: 0;
@@ -232,11 +229,5 @@ span {
   }
   100% {
     transform: scale(1);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .hero-text {
-    font-size: 1rem;
   }
 }
