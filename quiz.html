@@ -10,22 +10,28 @@
 </head>
 
 <body id="quiz">
+    <h1 id="quiz-title">Find your perfect tech role!</h1>
     <section>
         <div class="vertical-center">
             <div id="quiz-container">
                 <h2>Question goes here</h2>
                 <form onsubmit="return false;">
-                    <input type="radio" id="" name="question-one" value="manager">
-                    <label for="">answer 1</label>
-                    <br>
-                    <input type="radio" id="" name="question-one" value="maths">
-                    <label for="">answer 2</label>
-                    <br>
-                    <input type="radio" id="" name="question-one" value="web">
-                    <label for="">answer 3</label>
-                    <br>
-                    <input type="radio" id="" name="question-one" value="cyber">
-                    <label for="">answer 4</label>
+                    <ul>
+                        <li>
+                            <input type="radio" id="" name="question-one" value="manager">
+                            <label for="">answer 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="" name="question-one" value="maths">
+                            <label for="">answer 2</label></li>
+                        <li>
+                            <input type="radio" id="" name="question-one" value="web">
+                            <label for="">answer 3</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="" name="question-one" value="cyber">
+                            <label for="">answer 4</label></ul>
+                        </li>                    
                     <br>
 
                     <button id="next" onclick=nextQuestion() class="next-btn" type="submit">Next</button>
