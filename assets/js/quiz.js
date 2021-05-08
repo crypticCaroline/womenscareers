@@ -113,8 +113,6 @@ function showResultsModal() {
     // jobHeading.innerHTML = jobRoleOne.heading
     // jobContent.innerHTML = jobRoleOne
     resultsModal.style.display = "flex";
-
-
 }
 
 function resetRadio(){
