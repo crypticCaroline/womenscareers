@@ -235,6 +235,14 @@ span {
   margin: 0 auto;
   box-shadow: 2px 2px 2px black;
 }
+<<<<<<< HEAD
+=======
+
+#results-modal {
+    justify-content: space-around;
+}
+
+>>>>>>> 3aaeb1ff16955dcceefbc1f211f25a49b2e2ed83
 .card {
   /* border: 2px solid red; */
   margin: 0 auto;
@@ -272,9 +280,26 @@ span {
   align-items: center;
 }
 
-#result-btn {
+#results-btn {
     display:none;
+
 }
+#results-modal {
+    background:rgba(0,0,0,.7);
+    animation: zoomIn .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+
 
 @media only screen and (max-width: 600px) {
   .hero-text {
