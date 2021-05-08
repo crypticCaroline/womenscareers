@@ -8,22 +8,28 @@ let jobList = [{
     groups: ["web", "design"]
 }, {
     role: 'manager',
-    points: 0
+    points: 0,
+    groups: ["web", "maths", "computers"]
 }, {
     role: 'software',
-    points: 0
+    points: 0,
+    groups: ["web", "maths", "computers"]
 }, {
     role: 'game',
-    points: 0
+    points: 0,
+    groups: ["web", "maths", "computers"]
 }, {
     role: 'data',
-    points: 0
+    points: 0,
+    groups: ["web", "maths", "computers"]
 }, {
     role: 'system',
-    points: 0
+    points: 0,
+    groups: ["web", "maths", "computers"]
 }]
 
 
+let finalResult;
 const answer = document.getElementById('answer').value
 const showAnswer = document.getElementById('showAnswer')
 answer.addEventListener(click, addResult)
@@ -35,8 +41,8 @@ function addResult(answer) {
             jobList[i].points++;
             break;
         } else {
-            let group = (jobList[i].groups.find(answer))
-            if (group.find(answer)) {
+            let group = jobList[i].groups
+            if (group.includes(answer)) {
                 jobList[i].points++;
 
             }
@@ -44,15 +50,20 @@ function addResult(answer) {
     }
 }
 
-
-
-
 function showResult() {
+    calculateResult()
+    showResultsModal()
+}
+
+function calculateResult() {
+    finalResult = jobList.slice(0);
+    finalResult.sort(function (a, b) {
+        return  b.points - a.points;
+    });
+}
 
 
-
-
-    showResultModal()
+function showResultModal() {
 
 }
 
