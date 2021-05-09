@@ -46,10 +46,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   StartTextAnimation(0);
 });
 
+StartTextAnimation(0);
+});
+
 // QUESTION DISPLAY MODAL
 // CONSTANT
-const modal = document.getElementById("question-modal");
-const btn = document.getElementById("quiz-btn");
+const modal = document.getElementById("results-modal");
 const closeModal = document.getElementById("close-modal"); // FUNCTIONS
 
 // FUNCTIONS
@@ -68,6 +70,5 @@ anyWhereClose = (event) => {
   }
 };
 // EVENTS
-btn.addEventListener("click", openModal);
 closeModal.addEventListener("click", close);
 window.addEventListener("click", anyWhereClose);
