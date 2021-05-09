@@ -87,15 +87,16 @@ span {
 
 #quiz-title {
   text-align: center;
-  color: #207d8a;
+  color: #152B34;
   font-size: 300%;
+  font-family: 'Arial Narrow', Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 
-.vertical-center {
+.horizontal-center {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -35%);
+  transform: translate(-50%);
   width: 60%;
 }
 
@@ -103,8 +104,10 @@ span {
   border: 2px solid #caf0f8;
   border-radius: 15px;
   background-color: rgba(11, 82, 91, 0.8);
-  color: #caf0f8;
+  color: #fff;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
 #quiz ul {
@@ -143,8 +146,8 @@ label {
   cursor: pointer;
 }
 
-.question {
-  color: #CAF0F8;
+#question {
+  color: #fff;
   text-align: center;
 }
 
@@ -153,16 +156,18 @@ label {
   outline: 0;
   display: inline-block;
   padding: 10px 25px;
-  color: #0b525b;
+  color: #152b34;
   background-color: #caf0f8;
   border: 2px solid #caf0f8;
   cursor: pointer;
   border-radius: 15px;
   width: fit-content;
   margin: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
 .next-btn:hover {
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 
 .try-again-btn:hover {
@@ -297,6 +302,44 @@ label {
     transform: scale(1);
   }
 }
+
+/* Resources*/
+
+.cards {
+  height: 600px;
+}
+
+.cards div {
+  border: 2px solid #caf0f8;
+  border-radius: 15px;
+  background-color: rgba(11, 82, 91, 0.8);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.about-role {
+  padding-top: 30px;
+  width: 33%;
+  float: left;
+}
+
+.resources {
+  padding-top: 30px;
+  width: 33%;
+  float: right;
+}
+
+.women {
+  width: 33%;
+  margin: 0 auto;
+}
+
+.women img {
+  width: 33%;
+}
+
 
 /*  MEDIA QUERY */
 @media only screen and (max-width: 800px) {
