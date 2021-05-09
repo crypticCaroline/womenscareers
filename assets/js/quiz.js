@@ -27,7 +27,7 @@ let jobList = [{
         groups: ["web", "maths", "manager"],
     },
     {
-        role: "UX",
+        role: "ux",
         points: 0,
         groups: ["web", "design"],
     },
@@ -71,8 +71,7 @@ function nextQuestion() {
     addResult(answer);
     resetRadio();
     questionNumber++;
-    getQuestions();
-    checkQuestions();
+    getQuestions();;
 }
 
 
@@ -94,6 +93,7 @@ function showResult() {
     calculateResult();
     formatResults();
     fetchResult();
+    fetchAllResults();
 }
 
 function calculateResult() {
@@ -101,7 +101,6 @@ function calculateResult() {
     finalResult.sort(function (a, b) {
         return b.points - a.points;
     });
-    console.log(finalResult);
 }
 
 
@@ -129,6 +128,7 @@ function checkQuestions() {
     if (questionNumber > 2) {
         next.style.display = "none";
         result.style.display = "inline-block";
+        return
     }
 }
 
@@ -145,6 +145,10 @@ function formatResults() {
 window.addEventListener('DOMContentLoaded', getQuestions)
 
 async function getQuestions() {
+    if (questionNumber >  2) {
+        checkQuestions()
+        return
+    }
     fetch("assets/data/questions.json")
         .then(res => {
             return res.json();
@@ -180,6 +184,39 @@ async function fetchResult() {
     jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
     jobImage.src = resultObj.resultsList[jobRoleOne]['photo']
     jobLink.href = resultObj.resultsList[jobRoleOne]['link']
+}
+
+async function fetchAllResults(){
+    let response = await fetch('assets/data/results.json');
+    let data = await response.text();
+    let resultObj = await JSON.parse(data)
+    let resultDiv = document.getElementById("results-div")
+    console.log(finalResult)
+
+    for (let resultCard in finalResult) {
+        console.log(resultCard)
+        console.log(resultCard['title'])
+        let heading = document.createElement("h5");
+        let headingText = document.createTextNode(resultObj.resultsList[finalResult[resultCard].role]['title'])
+        heading.appendChild(headingText)
+        resultDiv.append(heading);
+
+    }
+
+}
+
+}
 
 
+document.addEventListener("click",function (event) {
+		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
+			closeModal();
+		}
+	},
+	false
+);
+
+function closeModal() {
+	document.querySelector("#results-modal").style.display = "none";
 }
