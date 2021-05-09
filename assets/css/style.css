@@ -303,6 +303,44 @@ label {
   }
 }
 
+/* Resources*/
+
+.cards {
+  height: 600px;
+}
+
+.cards div {
+  border: 2px solid #caf0f8;
+  border-radius: 15px;
+  background-color: rgba(11, 82, 91, 0.8);
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.about-role {
+  padding-top: 30px;
+  width: 33%;
+  float: left;
+}
+
+.resources {
+  padding-top: 30px;
+  width: 33%;
+  float: right;
+}
+
+.women {
+  width: 33%;
+  margin: 0 auto;
+}
+
+.women img {
+  width: 33%;
+}
+
+
 /*  MEDIA QUERY */
 @media only screen and (max-width: 800px) {
   body {
