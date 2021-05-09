@@ -10,12 +10,14 @@
 </head>
 
 <body id="quiz">
+    <a href="resources.html">resource</a>
     <h1 id="quiz-title">Find your perfect tech role!</h1>
     <section>
         <div class="horizontal-center">
             <div id="quiz-container">
                 <h2 id="question">Question goes here</h2>
-                <form onsubmit="return false;">
+                <p id="question-number"></p>
+                <form onsubmit="return false;" id="quiz-form">
                     <ul>
                         <li>
                             <input type="radio" id="answerOne" class="reset-btn" name="question-one" value="manager">
@@ -49,7 +51,6 @@
           <div class="col-12">
               <div class="card" style="width: 40rem;">
                 <button class="button-close-modal">X</button>
-                 <img class="image mx-auto" src="assets/images/software-dev.jpg" alt="Card image cap" id="job-image">
                  <div class="card-body">
                  <h5 class="card-title" id="job-title">Software Developer</h5>
                  <p class="card-text" id="job-content">
@@ -60,6 +61,7 @@
                                       operates with new databases. In a role of a software developer they create the applications that allow people to do specific
                                         tasks on a computer or mobile and others develop the underlying systems that control networks.
                  </p>
+                 <img class="image mx-auto" src="assets/images/software-dev.jpg" alt="Image of Tech Women" id="job-image">
                  <a href="resources.html" class="btn btn-primary" id="job-link">Learn More About Software Developer</a>
                  <br>
                  <br>
