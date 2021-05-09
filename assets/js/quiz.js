@@ -93,7 +93,6 @@ function showResult() {
     calculateResult();
     formatResults();
     fetchResult();
-    fetchAllResults();
 }
 
 function calculateResult() {
@@ -102,7 +101,6 @@ function calculateResult() {
         return b.points - a.points;
     });
 }
-
 
 function showResultsModal() {
     resultsModal = document.getElementById("results-modal");
@@ -145,7 +143,7 @@ function formatResults() {
 window.addEventListener('DOMContentLoaded', getQuestions)
 
 async function getQuestions() {
-    if (questionNumber >  2) {
+    if (questionNumber >  9) {
         checkQuestions()
         return
     }
@@ -187,26 +185,38 @@ async function fetchResult() {
 }
 
 async function fetchAllResults(){
+    // Gets the correct data from the json file
     let response = await fetch('assets/data/results.json');
     let data = await response.text();
     let resultObj = await JSON.parse(data)
     let resultDiv = document.getElementById("results-div")
-    console.log(finalResult)
-
+    let resultsModal = document.getElementById("results-modal")
+    let allResultsModal = document.getElementById("all-results-modal")
+    
+// Searches through the json file in the order of the job scores
     for (let resultCard in finalResult) {
-        console.log(resultCard)
-        console.log(resultCard['title'])
+        nextJob = finalResult[resultCard].role
+        let resultCardDiv = document.createElement("div")
+        resultCardDiv.className = "results-card"
         let heading = document.createElement("h5");
-        let headingText = document.createTextNode(resultObj.resultsList[finalResult[resultCard].role]['title'])
+        let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
+        let content = document.createElement("p");
+        let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
+        let image = document.createElement("img");
+        image.src = resultObj.resultsList[nextJob]['photo']
+        let link = document.createElement("a");
+        link.href = resultObj.resultsList[nextJob]['link']
+        let linkText = document.createTextNode("Learn more about "+ nextJob + "!")
+        
         heading.appendChild(headingText)
-        resultDiv.append(heading);
-
+        content.appendChild(contentText)
+        link.appendChild(linkText)
+        resultCardDiv.append(heading, contentText, image, link);
+        resultDiv.appendChild(resultCardDiv);
+        resultsModal.style.display = "none"
+        allResultsModal.style.display = "inline-block"
     }
-
 }
-
-}
-
 
 document.addEventListener("click",function (event) {
 		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
