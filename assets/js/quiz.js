@@ -73,7 +73,6 @@ function nextQuestion() {
     questionNumber++;
     getQuestions();
     checkQuestions();
-    buildQuestion();
 }
 
 
