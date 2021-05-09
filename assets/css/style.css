@@ -1,11 +1,8 @@
-/* FONT */
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
-
 /* UTILITIES */
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -60,7 +57,6 @@ body {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-
 @keyframes animation-btn {
   0% {
     opacity: 0;
@@ -69,7 +65,6 @@ body {
     opacity: 1;
   }
 }
-
 #quiz-btn:hover {
   border: 2px solid white;
 }
@@ -79,14 +74,13 @@ span {
   border-right: 0.05em solid;
   animation: caret 1s steps(1) infinite;
 }
-
 @keyframes caret {
   50% {
     border-color: transparent;
   }
 }
-
 /* QUIZ */
+
 #quiz {
   position: relative;
 }
@@ -149,6 +143,11 @@ label {
   cursor: pointer;
 }
 
+.question {
+  color: #CAF0F8;
+  text-align: center;
+}
+
 .next-btn {
   border: none;
   outline: 0;
@@ -182,6 +181,7 @@ label {
 
 /* THE results MODAL */
 
+
 /* Modal background */
 .modal {
   display: none;
@@ -193,22 +193,20 @@ label {
   height: 100%;
   overflow: auto;
 }
-
 /* Modal Content/Box */
 .modal-content {
-  background-color: #caf0f8;
+  background-color: #CAF0F8;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #457b9d;
+  border: 1px solid #457B9D;
   width: 80%;
-  color: #1d3557;
+  color: #1D3557;
   font-size: 1.5rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
 /* The Close Button */
 .close {
-  color: #1d3557;
+  color: #1D3557;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -220,13 +218,26 @@ label {
   cursor: pointer;
 }
 
+.try-again-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px black;
+}
+
 .card {
   /* border: 2px solid red; */
   margin: 0 auto;
   padding: 20px;
   margin-top: 50px;
   margin-bottom: 20px;
-  background-color: #207d8a;
+  background-color: #207D8A;
 }
 .card-text {
   color: #ddd;
@@ -242,7 +253,6 @@ label {
   font-size: x-large;
   margin: 10px 10px;
 }
-
 .image {
   padding: 10px;
 }
@@ -254,7 +264,6 @@ label {
   color: black;
   margin-left: 80px;
 }
-
 .center {
   display: flex;
   justify-content: center;
