@@ -46,9 +46,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   StartTextAnimation(0);
 });
 
-StartTextAnimation(0);
-});
-
 // QUESTION DISPLAY MODAL
 // CONSTANT
 const modal = document.getElementById("results-modal");
