@@ -68,9 +68,4 @@ anyWhereClose = (event) => {
 };
 // EVENTS
 closeModal.addEventListener("click", close);
-<<<<<<< HEAD
 window.addEventListener("click", anyWhereClose);
-
-=======
-window.addEventListener("click", anyWhereClose);
->>>>>>> a3ed4b6b2717fe02387bbb4642ec325283bd4e79
