@@ -177,6 +177,10 @@ async function fetchResult() {
     let jobContent = document.getElementById("job-content");
     let jobImage = document.getElementById("job-image");
     let jobLink = document.getElementById('job-link')
+    let percentage = document.getElementById('percentage')
+    let percentageText = findPercentage(finalResult[0].points)
+
+    percentage.innerHTML = (percentageText + "%")
     resultsModal.style.display = "flex";
     jobHeading.innerHTML = resultObj.resultsList[jobRoleOne]['title']
     jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
@@ -197,21 +201,28 @@ async function fetchAllResults() {
     for (let resultCard in finalResult) {
         nextJob = finalResult[resultCard].role
         let resultCardDiv = document.createElement("div")
-        resultCardDiv.className = "results-card"
         let heading = document.createElement("h5");
         let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
         let content = document.createElement("p");
         let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
         let image = document.createElement("img");
-        image.src = resultObj.resultsList[nextJob]['photo']
-        let link = document.createElement("a");
-        link.href = resultObj.resultsList[nextJob]['link']
+        let link = document.createElement("a")
         let linkText = document.createTextNode("Learn more about " + nextJob + "!")
+        let percentage = document.createElement('p')
+        let percentageText = findPercentage(finalResult[resultCard].points)
+
+        percentage.className = "percentage"
+        percentage.innerHTML = (percentageText + "%")
+        resultCardDiv.className = "results-card"
+        image.src = resultObj.resultsList[nextJob]['photo'];
+        link.href = resultObj.resultsList[nextJob]['link'];
+
 
         heading.appendChild(headingText)
         content.appendChild(contentText)
         link.appendChild(linkText)
-        resultCardDiv.append(heading, contentText, image, link);
+
+        resultCardDiv.append(heading, percentage, contentText, image, link);
         resultDiv.appendChild(resultCardDiv);
         resultsModal.style.display = "none"
         allResultsModal.style.display = "inline-block"
@@ -219,14 +230,11 @@ async function fetchAllResults() {
 }
 
 document.addEventListener("click", function (event) {
-            // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
-            if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
-                closeModal();
-            } else if (event.target.matches(".button-close-modal") || event.target.matches("#all-results-modal")) {
-                closeModalAll();
-            } 
-        },
-
+        // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+        if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
+            closeModal();
+        }
+    },
     false
 );
 
@@ -234,7 +242,13 @@ function closeModal() {
     document.querySelector("#results-modal").style.display = "none";
 }
 
-function closeModalAll () {
+function closeModalResults() {
     document.querySelector("#all-results-modal").style.display = "none";
+}
+
+function findPercentage(points) {
+    let total = (100 / 9) * points
+    total = Math.round(total)
+    return total
 
 }
