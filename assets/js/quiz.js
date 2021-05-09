@@ -1,4 +1,16 @@
 
+let questionNumber = 0
+const takeQuizBtn = document.getElementById('quiz-btn')
+const next = document.getElementById('next')
+const result = document.getElementById('results-btn')
+const question = document.getElementById('question')
+let answerOneRef = document.getElementById('answerOne')
+let answerTwoRef = document.getElementById('answerTwo')
+let answerThreeRef= document.getElementById('answerThree')
+let answerFourRef = document.getElementById('answerFour')
+let radioBtns = document.getElementsByClassName('reset-btn')
+let answer;
+let availableQuestions = [];
 let jobList = [{
     role: 'cyber',
     points: 0,
@@ -28,21 +40,6 @@ let jobList = [{
     points: 0,
     groups: ["web", "maths", "computers"]
 }]
-
-
-let finalResult;
-let questionNumber = 0
-const next = document.getElementById('next')
-const result = document.getElementById('results-btn')
-const question = document.getElementById('question')
-let answerOne = document.getElementById('answerOne')
-let answerTwo = document.getElementById('answerTwo')
-let answerThree = document.getElementById('answerThree')
-let answerFour = document.getElementById('answerFour')
-let radioBtns = document.getElementsByClassName('reset-btn')
-let answer;
-let availableQuestions = [];
-
 function nextQuestion() {
     for(i=0; i<radioBtns.length; i++ ) {
         if(radioBtns[i].checked == true) {
@@ -58,14 +55,10 @@ function nextQuestion() {
     questionNumber++
     checkQuestions()
     buildQuestion()
-}
-
-function buildQuestion() {
     
-
 }
-
-
+function buildQuestion() {
+}
 function addResult(answer) {
     for (var i = 0; i < jobList.length; i++) {
         if (jobList[i].role == answer) {
@@ -75,18 +68,15 @@ function addResult(answer) {
             let group = jobList[i].groups
             if (group.includes(answer)) {
                 jobList[i].points++;
-
             }
         }
     }
 }
-
 function showResult() {
     calculateResult()
     formatResults()
     showResultsModal()
 }
-
 function calculateResult() {
     finalResult = jobList.slice(0);
     finalResult.sort(function (a, b) {
@@ -94,7 +84,6 @@ function calculateResult() {
     });
     console.log(finalResult)
 }
-
 function formatResults(){
     var jobRoleOne = finalResult[0].role
     var jobRoleTwo = finalResult[1].role
@@ -103,15 +92,16 @@ function formatResults(){
     var jobRoleFive = finalResult[4].role
     var jvarobRoleSix = finalResult[5].role
     var jobRoleSeven = finalResult[6].role
-
 }
-
 function showResultsModal() { 
     resultsModal = document.getElementById('results-modal')
-    resultsModal.style.display = "flex";   
-
+    jobHeading = document.getElementById('job-title')
+    jobContent = document.getElementById("job-content")
+    jobImage = document.getElementById("job-image")
+    jobHeading.innerHTML = jobRoleOne.heading
+    jobContent.innerHTML = jobRoleOne
+    resultsModal.style.display = "flex";
 }
-
 function resetRadio(){
     let radioBtns = document.getElementsByClassName('reset-btn')
     for(i=0; i<radioBtns.length; i++ ) {
@@ -120,8 +110,6 @@ function resetRadio(){
         }
     }
 }
-
-
 function checkQuestions(){
     if (questionNumber > 2) {
         next.style.display = "none"
@@ -130,12 +118,29 @@ function checkQuestions(){
 }
 
 
+
+
 fetch("assets/data/questions.json")
-.then((res) => {
-    loadedQuestions = res.json(); 
-    })
-  .then((loadedQuestions) => {
-      let questionsArray = loadedQuestions.questionList 
-      console.log(questionsArray)
-  
+.then(res => {
+    return res.json();
 })
+.then(loadedQuestions => {
+    const availableQuestions = loadedQuestions[0].questionList
+    console.log(availableQuestions);
+    let quizQuestions = availableQuestions[0].question
+    console.log(quizQuestions)
+
+
+    let possibleAnswers = availableQuestions.forEach(choice) => {
+        
+    });
+    console.log(possibleAnswers);
+
+ 
+
+// takeQuizBtn.addEventListener('click', () => {
+//     question.innerHTML = quizQuestion; 
+// });
+
+
+

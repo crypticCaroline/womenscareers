@@ -71,3 +71,4 @@ anyWhereClose = (event) => {
 btn.addEventListener("click", openModal);
 closeModal.addEventListener("click", close);
 window.addEventListener("click", anyWhereClose);
+
