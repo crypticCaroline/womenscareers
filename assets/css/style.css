@@ -123,9 +123,26 @@ span {
   margin: 5px auto;
   border: 1px solid #caf0f8;
   border-radius: 15px;
-  padding: 1% 2%;
   width: 80%;
   text-align: left;
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  color: #207d8a;
+  background-color: #caf0f8;
+  border: 1px solid #207d8a;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 1% 2%;
 }
 
 #quiz label {
@@ -139,10 +156,14 @@ span {
   padding: 10px 25px;
   color: #0b525b;
   background-color: #caf0f8;
+  border: 2px solid #caf0f8;
   cursor: pointer;
   border-radius: 15px;
   width: fit-content;
   margin: 20px 0;
+}
+.next-btn:hover {
+  border: 2px solid white;
 }
 
 .try-again-btn {
@@ -268,3 +289,6 @@ span {
     font-size: 1rem;
   }
 }
+
+
+
