@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', getQuestions)
 let jobList = [{
         role: "cyber",
         points: 0,
-        groups: [ "maths3", "details", "teamwork2", "empathy2", "problemsolving1", "creativity3", "curiosity1", "planning4", "analytical2"],
+        groups: ["maths3", "details", "teamwork2", "empathy2", "problemsolving1", "creativity3", "curiosity1", "planning4", "analytical2"],
     },
     {
         role: "ux",
@@ -51,12 +51,12 @@ let jobList = [{
     {
         role: "data",
         points: 0,
-        groups: ["maths1", "details1", "problemsolving1", "creativity4","planning4"],
+        groups: ["maths1", "details1", "problemsolving1", "creativity4", "planning4"],
     },
     {
         role: "system",
         points: 0,
-        groups: [ "teamwork2", "problemsolving1", "creativity4", "curiosity2"],
+        groups: ["teamwork2", "problemsolving1", "creativity4", "curiosity2"],
     },
 ];
 
@@ -140,9 +140,9 @@ async function getQuestions() {
     } else if (questionNumber == 9) {
         next.style.display = "none";
         result.style.display = "inline-block";
-        quizForm.style.display ="none";
+        quizForm.style.display = "none";
         quizHeading.innerHTML = "Time to get your results!"
-        questionNumberBox.style.display ="none"
+        questionNumberBox.style.display = "none"
         return
     }
     fetch("assets/data/questions.json")
@@ -162,7 +162,7 @@ async function getQuestions() {
             answerThreeRef.value = loadedQuestions[0].questionList[questionNumber].answerThreeTag
             answerFourRef.value = loadedQuestions[0].questionList[questionNumber].answerFourTag
 
-            questionNumberBox.innerHTML = questionNumberText +"/9"
+            questionNumberBox.innerHTML = questionNumberText + "/9"
 
 
         })
@@ -177,6 +177,10 @@ async function fetchResult() {
     let jobContent = document.getElementById("job-content");
     let jobImage = document.getElementById("job-image");
     let jobLink = document.getElementById('job-link')
+    let percentage = document.getElementById('percentage')
+    let percentageText = findPercentage(finalResult[0].points)
+
+    percentage.innerHTML = (percentageText + "%")
     resultsModal.style.display = "flex";
     jobHeading.innerHTML = resultObj.resultsList[jobRoleOne]['title']
     jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
@@ -184,7 +188,7 @@ async function fetchResult() {
     jobLink.href = resultObj.resultsList[jobRoleOne]['link']
 }
 
-async function fetchAllResults(){
+async function fetchAllResults() {
     // Gets the correct data from the json file
     let response = await fetch('assets/data/results.json');
     let data = await response.text();
@@ -192,41 +196,59 @@ async function fetchAllResults(){
     let resultDiv = document.getElementById("results-div")
     let resultsModal = document.getElementById("results-modal")
     let allResultsModal = document.getElementById("all-results-modal")
-    
-// Searches through the json file in the order of the job scores
+
+    // Searches through the json file in the order of the job scores
     for (let resultCard in finalResult) {
         nextJob = finalResult[resultCard].role
         let resultCardDiv = document.createElement("div")
-        resultCardDiv.className = "results-card"
         let heading = document.createElement("h5");
         let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
         let content = document.createElement("p");
         let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
         let image = document.createElement("img");
-        image.src = resultObj.resultsList[nextJob]['photo']
-        let link = document.createElement("a");
-        link.href = resultObj.resultsList[nextJob]['link']
-        let linkText = document.createTextNode("Learn more about "+ nextJob + "!")
-        
+        let link = document.createElement("a")
+        let linkText = document.createTextNode("Learn more about " + nextJob + "!")
+        let percentage = document.createElement('p')
+        let percentageText = findPercentage(finalResult[resultCard].points)
+
+        percentage.className = "percentage"
+        percentage.innerHTML = (percentageText + "%")
+        resultCardDiv.className = "results-card"
+        image.src = resultObj.resultsList[nextJob]['photo'];
+        link.href = resultObj.resultsList[nextJob]['link'];
+
+
         heading.appendChild(headingText)
         content.appendChild(contentText)
         link.appendChild(linkText)
-        resultCardDiv.append(heading, contentText, image, link);
+
+        resultCardDiv.append(heading, percentage, contentText, image, link);
         resultDiv.appendChild(resultCardDiv);
         resultsModal.style.display = "none"
         allResultsModal.style.display = "inline-block"
     }
 }
 
-document.addEventListener("click",function (event) {
-		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
-		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
-			closeModal();
-		}
-	},
-	false
+document.addEventListener("click", function (event) {
+        // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+        if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
+            closeModal();
+        }
+    },
+    false
 );
 
 function closeModal() {
-	document.querySelector("#results-modal").style.display = "none";
+    document.querySelector("#results-modal").style.display = "none";
+}
+
+function closeModalResults() {
+    document.querySelector("#all-results-modal").style.display = "none";
+}
+
+function findPercentage(points) {
+    let total = (100 / 9) * points
+    total = Math.round(total)
+    return total
+
 }
