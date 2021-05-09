@@ -85,7 +85,7 @@ span {
   position: relative;
 }
 
-#quiz-title {
+h2.title {
   text-align: center;
   color: #152B34;
   font-size: 300%;
@@ -353,40 +353,35 @@ label {
 
 /* Resources*/
 
-.cards {
-  height: 600px;
-}
-
-.cards div {
+.resources-card {
+  margin: 0 auto;
   border: 2px solid #caf0f8;
   border-radius: 15px;
   background-color: rgba(11, 82, 91, 0.8);
   color: #fff;
-  text-align: center;
+  text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
-}
-
-.about-role {
-  padding-top: 30px;
-  width: 33%;
-  float: left;
-}
-
-.resources {
-  padding-top: 30px;
-  width: 33%;
-  float: right;
-}
-
-.women {
-  width: 33%;
-  margin: 0 auto;
+  width: 80%;
+  padding: 30px;
 }
 
 .women img {
-  width: 33%;
+  width: 300px;
+  float: left;
+  margin: 0 10px 10px 0;
 }
+
+.resources-card h3 {
+  clear: both;
+}
+
+.resources-card p {
+  padding: 0 30px;
+  text-indent: 2em;
+  text-align: justify;
+}
+
 
 
 /*  MEDIA QUERY */
