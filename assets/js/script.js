@@ -48,8 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // QUESTION DISPLAY MODAL
 // CONSTANT
-const modal = document.getElementById("question-modal");
-const btn = document.getElementById("quiz-btn");
+const modal = document.getElementById("results-modal");
 const closeModal = document.getElementById("close-modal"); // FUNCTIONS
 
 // FUNCTIONS
@@ -68,7 +67,10 @@ anyWhereClose = (event) => {
   }
 };
 // EVENTS
-btn.addEventListener("click", openModal);
 closeModal.addEventListener("click", close);
+<<<<<<< HEAD
 window.addEventListener("click", anyWhereClose);
 
+=======
+window.addEventListener("click", anyWhereClose);
+>>>>>>> a3ed4b6b2717fe02387bbb4642ec325283bd4e79
