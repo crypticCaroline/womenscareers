@@ -91,6 +91,7 @@ span {
   font-size: 300%;
   font-family: 'Arial Narrow', Helvetica, sans-serif;
   text-transform: uppercase;
+  text-shadow: -1px -1px 0 #CAF0F8, 1px -1px 0 #CAF0F8, -1px 1px 0 #CAF0F8, 1px 1px 0 #CAF0F8;
 }
 
 .horizontal-center {
@@ -101,13 +102,14 @@ span {
 }
 
 #quiz-container {
-  border: 2px solid #caf0f8;
-  border-radius: 15px;
+  border: 4px solid #caf0f8;
+  border-radius: 5px;
   background-color: rgba(11, 82, 91, 0.8);
   color: #fff;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px;
 }
 
 #quiz ul {
@@ -118,10 +120,10 @@ span {
 
 #quiz li {
   margin: 5px auto;
-  border: 1px solid #caf0f8;
-  border-radius: 15px;
+  border: 2px solid #caf0f8;
+  border-radius: 5px;
   width: 80%;
-  text-align: left;
+  text-align: justify;
 }
 
 input {
@@ -131,14 +133,18 @@ input {
 input:checked + label {
   color: #207d8a;
   background-color: #caf0f8;
-  border: 1px solid #207d8a;
 }
+
+input:hover + label {
+  color: #207d8a;
+  background-color: #caf0f8;
+  }
 
 label {
   display: inline-block;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 1% 2%;
 }
 
@@ -149,6 +155,9 @@ label {
 #question {
   color: #fff;
   text-align: center;
+  font-size: 1.8rem;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .next-btn, .try-again-btn {
@@ -164,8 +173,9 @@ label {
   width: fit-content;
   margin: 20px 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
+
 .next-btn:hover {
   border: 2px solid #fff;
 }
