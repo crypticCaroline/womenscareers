@@ -148,7 +148,7 @@ label {
   text-align: center;
 }
 
-.next-btn {
+.next-btn, .try-again-btn {
   border: none;
   outline: 0;
   display: inline-block;
@@ -165,18 +165,12 @@ label {
   border: 2px solid white;
 }
 
-.try-again-btn {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
-  text-align: center;
-  cursor: pointer;
-  margin: 0 auto;
-  box-shadow: 2px 2px 2px black;
+.try-again-btn:hover {
+  border: 2px solid white;
 }
+.try-again-btn {
+  text-decoration: none;
+} 
 
 
 /* THE results MODAL */
@@ -206,7 +200,7 @@ label {
 }
 /* The Close Button */
 .close {
-  color: #1D3557;
+  color: #ddd;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -268,6 +262,7 @@ label {
   font-weight: 500;
   text-align: justify;
   color:#ddd;
+  display: flex;
   justify-content: center;
 }
 .center {
@@ -285,6 +280,13 @@ label {
 
 #results-btn {
     display:none;
+}
+
+.button-close-modal {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: auto;
 }
 
 @keyframes zoomIn {
