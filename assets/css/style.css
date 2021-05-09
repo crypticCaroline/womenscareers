@@ -50,6 +50,13 @@ body {
   cursor: pointer;
   border-radius: 15px;
 }
+.btn:hover {
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 0.4rem 0 #0b525b;
+  transition: 150ms;
+  transform: scale(1.03);
+}
 
 .delay {
   opacity: 0;
@@ -77,9 +84,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-#quiz-btn:hover {
-  border: 2px solid white;
 }
 
 /* TEXT ANIMATION */
