@@ -12,6 +12,7 @@ let answerThreeLabel = document.getElementById("answerThreeLabel");
 let answerFourRef = document.getElementById("answerFour");
 let answerFourLabel = document.getElementById("answerFourLabel");
 let radioBtns = document.getElementsByClassName("reset-btn");
+let questionNumberBox = document.getElementById("question-number")
 let jobRoleOne;
 let jobRoleTwo;
 let jobRoleThree;
@@ -20,41 +21,42 @@ let jobRoleFive;
 let jobRoleSix;
 let jobRoleSeven;
 let answer;
+window.addEventListener('DOMContentLoaded', getQuestions)
 
 let jobList = [{
         role: "cyber",
         points: 0,
-        groups: ["web", "maths", "manager"],
+        groups: [ "maths3", "details", "teamwork2", "empathy2", "problemsolving1", "creativity3", "curiosity1", "planning4", "analytical2"],
     },
     {
         role: "ux",
         points: 0,
-        groups: ["web", "design"],
+        groups: ["details", "teamwork2", "analystical2", "problemsolving2", "curiosity2", "planning1"],
     },
     {
         role: "manager",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["empathy2", "teamwork1", "analystical2", "problemsolving2", "creativity3", "curiosity1", "planning1"],
     },
     {
         role: "software",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths3", "teamwork1", "analystical2", "problemsolving1", "creativity1", "curiosity1", "planning1"],
     },
     {
         role: "game",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths1", "teamwork2", "details1", "problemsolving1", "creativity1", "curiosity2"],
     },
     {
         role: "data",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths1", "details1", "problemsolving1", "creativity4","planning4"],
     },
     {
         role: "system",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: [ "teamwork2", "problemsolving1", "creativity4", "curiosity2"],
     },
 ];
 
@@ -62,6 +64,9 @@ function nextQuestion() {
     for (i = 0; i < radioBtns.length; i++) {
         if (radioBtns[i].checked == true) {
             answer = radioBtns[i].value;
+            break
+        } else {
+            answer = false
         }
     }
     if (!answer) {
@@ -104,12 +109,6 @@ function calculateResult() {
 
 function showResultsModal() {
     resultsModal = document.getElementById("results-modal");
-    jobHeading = document.getElementById("job-title");
-    jobContent = document.getElementById("job-content");
-    jobImage = document.getElementById("job-image");
-
-    // jobHeading.innerHTML = jobRoleOne.heading
-    // jobContent.innerHTML = jobRoleOne
     resultsModal.style.display = "flex";
 }
 
@@ -119,14 +118,6 @@ function resetRadio() {
         if ((radioBtns[i].checked = true)) {
             radioBtns[i].checked = false;
         }
-    }
-}
-
-function checkQuestions() {
-    if (questionNumber > 2) {
-        next.style.display = "none";
-        result.style.display = "inline-block";
-        return
     }
 }
 
@@ -140,11 +131,18 @@ function formatResults() {
     jobRoleSeven = finalResult[6].role;
 }
 
-window.addEventListener('DOMContentLoaded', getQuestions)
-
 async function getQuestions() {
-    if (questionNumber >  9) {
-        checkQuestions()
+    questionNumberText = (questionNumber + 1)
+    quizForm = document.getElementById("quiz-form")
+    quizHeading = document.getElementById("question")
+    if (questionNumber == 8) {
+        next.innerHTML = "Submit Quiz";
+    } else if (questionNumber == 9) {
+        next.style.display = "none";
+        result.style.display = "inline-block";
+        quizForm.style.display ="none";
+        quizHeading.innerHTML = "Time to get your results!"
+        questionNumberBox.style.display ="none"
         return
     }
     fetch("assets/data/questions.json")
@@ -163,6 +161,8 @@ async function getQuestions() {
             answerTwoRef.value = loadedQuestions[0].questionList[questionNumber].answerTwoTag
             answerThreeRef.value = loadedQuestions[0].questionList[questionNumber].answerThreeTag
             answerFourRef.value = loadedQuestions[0].questionList[questionNumber].answerFourTag
+
+            questionNumberBox.innerHTML = questionNumberText +"/9"
 
 
         })
