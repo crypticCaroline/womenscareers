@@ -1,17 +1,55 @@
 {
-    "resultsList": [{
-            "career": "cyber",
+    "resultsList": {
+        "cyber": {
             "title": "Ethical Hacker / Cyber Security",
             "content": "As a cyber expert..............",
-            "link": "In space"
+            "link": "resources/cybersecurity.html",
+            "photo": ""
 
         },
-        {
-            "career": "cyber",
-            "title": "Ethical Hacker / Cyber Security",
-            "content": "As a cyber expert..............",
-            "link": "In space"
+        "manager": {
+            "title": "Technical Project Manager",
+            "content": "As a Techincal Project Manager expert..............",
+            "link": "resources/projectmanager",
+            "photo": ""
+
+        },
+
+        "UX": {
+            "title": "UX Designer",
+            "content": "As a UX designer..............",
+            "link": "resources/uxdesigner",
+            "photo": ""
+
+        },
+        "systems": {
+            "title": "Systems Architecture",
+            "content": "As a Systems.............",
+            "link": "resources/systemsarchitecture.html",
+            "photo": ""
+        },
+        "game": {
+            "title": "Games Developer",
+            "content": "As a games expert..............",
+            "link": "resources/gamedeveloper.html",
+            "photo": ""
+
+        },
+        "software": {
+            "title": "Software Engineer",
+            "content": "As Software Engineer..............",
+            "link": "resources/softwareengineer.html",
+            "photo": ""
+
+        },
+        "data": {
+            "title": "Data Analysist",
+            "content": "As a Data..............",
+            "link": "resources/dataanalysist.html",
+            "photo": ""
 
         }
-    ]
+    }
+
+
 }
