@@ -1,39 +1,108 @@
 [{
-    "questionList": [
-        {
-            "question":"Where do you see your self in 5 years time",
-            "answerOne": "As a CEO", 
-            "answerOneTag": "cyber",
-            "answerTwo":"In space",
-            "answerTwoTag": "maths", 
-            "answerThree": "living on Mars", 
-            "answerThreeTag": "UX", 
-            "answerFour": "Who Knows",
-            "answerFourTag": "creativity"
+    "questionList": [{
+            "question": "Let's talk about mathematics. How good are you with them?",
+            "answerOne": "Call me Archimedes!",
+            "answerOneTag": "maths1",
+            "answerTwo": "I was 2nd best in class.",
+            "answerTwoTag": "UX",
+            "answerThree": "I definitely use my phone to do a simple calculation.",
+            "answerThreeTag": "maths3",
+            "answerFour": "Hey! No bad words here please.",
+            "answerFourTag": "manager"
 
         },
         {
-            "question":"Where do you see your self in 15 years time",
-            "answerOne": "at home", 
-            "answerOneTag": "software",
-            "answerTwo":"In space",
-            "answerTwoTag": "maths", 
-            "answerThree": "managing a school", 
-            "answerThreeTag": "manager", 
-            "answerFour": "Who Knows",
-            "answerFourTag": "creativity"
+            "question": "Today is the D-day, your wedding! What are you doing right now?",
+            "answerOne": "Checking if each floral centerpiece is composed precisely of 12 pink roses, 8 purple lisianthus and 5 different sprawling branches, weights exactly 749 grams AND, of course, if they are perfectly centered on the table.",
+            "answerOneTag": "details1",
+            "answerTwo": "Checking if the last deliveries are in, if all the staff has arrived, if the DJ has got the right music for your 1st dance, etc.",
+            "answerTwoTag": "manager",
+            "answerThree": "Sipping margaritas, your wedding planner is in charge of everything.",
+            "answerThreeTag": "software",
+            "answerFour": "You barely check if your soon-to-be husband/wife is present...",
+            "answerFourTag": "system"
 
-        }, 
+        },
         {
-            "question":"Where do you see your self in 25 years time",
-            "answerOne": "at home", 
+            "question": "TEAMWORK & COMMUNICATION",
+            "answerOne": "Answer 1",
+            "answerOneTag": "teamwork1",
+            "answerTwo": "Answer 2",
+            "answerTwoTag": "teamwork2",
+            "answerThree": "Answer 3",
+            "answerThreeTag": "data"
+
+        },
+        {
+            "question": "EMPATHY",
+            "answerOne": "Answer 1",
             "answerOneTag": "UX",
-            "answerTwo":"In space",
-            "answerTwoTag": "maths", 
-            "answerThree": "managing a school", 
-            "answerThreeTag": "manager", 
-            "answerFour": "Who Knows",
-            "answerFourTag": "creativity"
+            "answerTwo": "Answer 2",
+            "answerTwoTag": "empathy2",
+            "answerThree": "Answer 3",
+            "answerThreeTag": "system",
+            "answerFour": "Answer 4",
+            "answerFourTag": "data"
+
+        },
+        {
+            "question": "What was your favorite toy as a kid?",
+            "answerOne": "A Rubik's cube.",
+            "answerOneTag": "data",
+            "answerTwo": "An Etch A Sketch tablet.",
+            "answerTwoTag": "analytical2",
+            "answerThree": "A Gameboy.",
+            "answerThreeTag": "game",
+            "answerFour": "Lego bricks.",
+            "answerFourTag": "system"
+
+        },
+        {
+            "question": "PROBLEM SOLVING & CRITICAL THINKER",
+            "answerOne": "Answer 1",
+            "answerOneTag": "problemsolving1",
+            "answerTwo": "Answer 2",
+            "answerTwoTag": "problemsolving2",
+            "answerThree": "If you don't like problem solving at all... Forget about working in tech lol",
+            "answerThreeTag": "none",
+            "answerFour": "If you don't like problem solving at all... Forget about working in tech lol",
+            "answerFourTag": "none"
+
+        },
+        {
+            "question": "You're hungry, you open your fridge and notice you only have a bunch of random ingredients.",
+            "answerOne": "You try and make something new with what is available.",
+            "answerOneTag": "creativity1",
+            "answerTwo": "You ask everyone's best friend what can you do with what you already have (Google, you ask Google!)",
+            "answerTwoTag": "UX",
+            "answerThree": "Decide on a specific recipe and go straight to the nearest shop to buy what's missing to cook it.",
+            "answerThreeTag": "creativity3",
+            "answerFour": "'I'll get a Pepperoni pizza with extra cheese, thanks. 20 minutes is perfect, see you soon!'",
+            "answerFourTag": "creativity4"
+
+        },
+        {
+            "question": "Your beloved kitchen stand mixer does not work anymore. What's your first move?",
+            "answerOne": "You've already removed the external parts and are checking the wires, the engine and other components. I mean, it should not be that complicated, right?",
+            "answerOneTag": "curiosity1",
+            "answerTwo": "Check on Google's cousin if someone else's has had this issue and what's the fix (YouTube, Google's cousin is YouTube, OBVI!)",
+            "answerTwoTag": "curiosity2",
+            "answerThree": "Call in a repair the repairman and watch from far what he does and how he fixes it.",
+            "answerThreeTag": "manager",
+            "answerFour": "Buy a new one, no time for all that!",
+            "answerFourTag": "data"
+
+        },
+        {
+            "question": "You've decided to remodel your bedroom. How do you do it ?",
+            "answerOne": "You design mood boards of different styles, draw multiple sketches, spend countless hours on Pinterest and Instagram for inspiration, create spreadsheets and order a plethora of color samples for the paint.",
+            "answerOneTag": "planning1",
+            "answerTwo": "Couple of sketches, few paint color samples, one spreadsheet and we're good to go!",
+            "answerTwoTag": "game",
+            "answerThree": "You try 2 different shades of your favorite color on the wall, pick one aaand that's about it.",
+            "answerThreeTag": "system",
+            "answerFour": "You buy stuff that you like, when you see them, and they will fit in the room anyway.",
+            "answerFourTag": "planning4"
 
         }
     ]

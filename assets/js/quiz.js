@@ -12,6 +12,7 @@ let answerThreeLabel = document.getElementById("answerThreeLabel");
 let answerFourRef = document.getElementById("answerFour");
 let answerFourLabel = document.getElementById("answerFourLabel");
 let radioBtns = document.getElementsByClassName("reset-btn");
+let questionNumberBox = document.getElementById("question-number")
 let jobRoleOne;
 let jobRoleTwo;
 let jobRoleThree;
@@ -20,41 +21,42 @@ let jobRoleFive;
 let jobRoleSix;
 let jobRoleSeven;
 let answer;
+window.addEventListener('DOMContentLoaded', getQuestions)
 
 let jobList = [{
         role: "cyber",
         points: 0,
-        groups: ["web", "maths", "manager"],
+        groups: [ "maths3", "details", "teamwork2", "empathy2", "problemsolving1", "creativity3", "curiosity1", "planning4", "analytical2"],
     },
     {
         role: "ux",
         points: 0,
-        groups: ["web", "design"],
+        groups: ["details", "teamwork2", "analystical2", "problemsolving2", "curiosity2", "planning1"],
     },
     {
         role: "manager",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["empathy2", "teamwork1", "analystical2", "problemsolving2", "creativity3", "curiosity1", "planning1"],
     },
     {
         role: "software",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths3", "teamwork1", "analystical2", "problemsolving1", "creativity1", "curiosity1", "planning1"],
     },
     {
         role: "game",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths1", "teamwork2", "details1", "problemsolving1", "creativity1", "curiosity2"],
     },
     {
         role: "data",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: ["maths1", "details1", "problemsolving1", "creativity4","planning4"],
     },
     {
         role: "system",
         points: 0,
-        groups: ["web", "maths", "computers"],
+        groups: [ "teamwork2", "problemsolving1", "creativity4", "curiosity2"],
     },
 ];
 
@@ -62,6 +64,9 @@ function nextQuestion() {
     for (i = 0; i < radioBtns.length; i++) {
         if (radioBtns[i].checked == true) {
             answer = radioBtns[i].value;
+            break
+        } else {
+            answer = false
         }
     }
     if (!answer) {
@@ -93,7 +98,6 @@ function showResult() {
     calculateResult();
     formatResults();
     fetchResult();
-    fetchAllResults();
 }
 
 function calculateResult() {
@@ -103,15 +107,8 @@ function calculateResult() {
     });
 }
 
-
 function showResultsModal() {
     resultsModal = document.getElementById("results-modal");
-    jobHeading = document.getElementById("job-title");
-    jobContent = document.getElementById("job-content");
-    jobImage = document.getElementById("job-image");
-
-    // jobHeading.innerHTML = jobRoleOne.heading
-    // jobContent.innerHTML = jobRoleOne
     resultsModal.style.display = "flex";
 }
 
@@ -121,14 +118,6 @@ function resetRadio() {
         if ((radioBtns[i].checked = true)) {
             radioBtns[i].checked = false;
         }
-    }
-}
-
-function checkQuestions() {
-    if (questionNumber > 2) {
-        next.style.display = "none";
-        result.style.display = "inline-block";
-        return
     }
 }
 
@@ -142,11 +131,18 @@ function formatResults() {
     jobRoleSeven = finalResult[6].role;
 }
 
-window.addEventListener('DOMContentLoaded', getQuestions)
-
 async function getQuestions() {
-    if (questionNumber >  2) {
-        checkQuestions()
+    questionNumberText = (questionNumber + 1)
+    quizForm = document.getElementById("quiz-form")
+    quizHeading = document.getElementById("question")
+    if (questionNumber == 8) {
+        next.innerHTML = "Submit Quiz";
+    } else if (questionNumber == 9) {
+        next.style.display = "none";
+        result.style.display = "inline-block";
+        quizForm.style.display ="none";
+        quizHeading.innerHTML = "Time to get your results!"
+        questionNumberBox.style.display ="none"
         return
     }
     fetch("assets/data/questions.json")
@@ -165,6 +161,8 @@ async function getQuestions() {
             answerTwoRef.value = loadedQuestions[0].questionList[questionNumber].answerTwoTag
             answerThreeRef.value = loadedQuestions[0].questionList[questionNumber].answerThreeTag
             answerFourRef.value = loadedQuestions[0].questionList[questionNumber].answerFourTag
+
+            questionNumberBox.innerHTML = questionNumberText +"/9"
 
 
         })
@@ -187,27 +185,45 @@ async function fetchResult() {
 }
 
 async function fetchAllResults(){
+    // Gets the correct data from the json file
     let response = await fetch('assets/data/results.json');
     let data = await response.text();
     let resultObj = await JSON.parse(data)
     let resultDiv = document.getElementById("results-div")
-    console.log(finalResult)
-
+    let resultsModal = document.getElementById("results-modal")
+    let allResultsModal = document.getElementById("all-results-modal")
+    
+// Searches through the json file in the order of the job scores
     for (let resultCard in finalResult) {
-        console.log(resultCard)
-        console.log(resultCard['title'])
+        nextJob = finalResult[resultCard].role
+        let resultCardDiv = document.createElement("div")
+        resultCardDiv.className = "results-card"
         let heading = document.createElement("h5");
-        let headingText = document.createTextNode(resultObj.resultsList[finalResult[resultCard].role]['title'])
+        let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
+        let content = document.createElement("p");
+        let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
+        let image = document.createElement("img");
+        image.src = resultObj.resultsList[nextJob]['photo']
+        let link = document.createElement("a");
+        link.href = resultObj.resultsList[nextJob]['link']
+        let linkText = document.createTextNode("Learn more about "+ nextJob + "!")
+        
         heading.appendChild(headingText)
-        resultDiv.append(heading);
-
+        content.appendChild(contentText)
+        link.appendChild(linkText)
+        resultCardDiv.append(heading, contentText, image, link);
+        resultDiv.appendChild(resultCardDiv);
+        resultsModal.style.display = "none"
+        allResultsModal.style.display = "inline-block"
     }
-
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ea240e10875bf7e0b89e3abf786f67c704ab53f6
 document.addEventListener("click",function (event) {
 		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
 		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
