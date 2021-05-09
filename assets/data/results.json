@@ -15,14 +15,14 @@
 
         },
 
-        "UX": {
+        "ux": {
             "title": "UX Designer",
             "content": "As a UX designer..............",
             "link": "resources/uxdesigner",
             "photo": ""
 
         },
-        "systems": {
+        "system": {
             "title": "Systems Architecture",
             "content": "As a Systems.............",
             "link": "resources/systemsarchitecture.html",
@@ -50,6 +50,5 @@
 
         }
     }
-
 
 }
