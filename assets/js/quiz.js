@@ -85,6 +85,7 @@ function addResult(answer) {
 function showResult() {
   calculateResult();
   formatResults();
+  fetchResult()
   showResultsModal();
 }
 function calculateResult() {
@@ -165,5 +166,13 @@ fetch("assets/data/questions.json")
 //     question.innerHTML = quizQuestion; 
 // });
 
+async function fetchResult() {
+    let response = await fetch('/public/results.json');
+    let data = await response.text();
+    let resultObj = await JSON.parse(data)
+    console.log(data);
+    console.log(resultObj.resultsList[0]);
+    let topJob =finalResult[0].role
 
+}
 

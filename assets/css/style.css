@@ -81,15 +81,6 @@ span {
 }
 /* QUIZ */
 
-#quiz-container {
-  margin: auto;
-  width: 60%;
-  border: 1px solid #caf0f8;
-  border-radius: 15px;
-  background-color: rgba(11, 82, 91, .7);
-  position: relative;
-  top: 50px;
-}
 #quiz {
   position: relative;
 }
