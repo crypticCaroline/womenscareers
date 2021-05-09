@@ -2,11 +2,12 @@ let finalResult;
 let questionNumber = 0;
 const next = document.getElementById("next");
 const result = document.getElementById("results-btn");
-const question = document.getElementById("question");
-let answerOne = document.getElementById("answerOne");
-let answerTwo = document.getElementById("answerTwo");
-let answerThree = document.getElementById("answerThree");
-let answerFour = document.getElementById("answerFour");
+const questionRef = document.getElementById("question");
+let answerOneRef = document.getElementById("answerOne");
+let answerOneLabel = document.getElementById("answerOneLabel")
+let answerTwoRef = document.getElementById("answerTwo");
+let answerThreeRef = document.getElementById("answerThree");
+let answerFourRef = document.getElementById("answerFour");
 let radioBtns = document.getElementsByClassName("reset-btn");
 let answer;
 
@@ -61,6 +62,7 @@ function nextQuestion() {
   addResult(answer);
   resetRadio();
   questionNumber++;
+  getQuestions();
   checkQuestions();
   buildQuestion();
 }
@@ -80,13 +82,11 @@ function addResult(answer) {
     }
   }
 }
-
 function showResult() {
   calculateResult();
   formatResults();
   showResultsModal();
 }
-
 function calculateResult() {
   finalResult = jobList.slice(0);
   finalResult.sort(function (a, b) {
@@ -131,3 +131,39 @@ function checkQuestions() {
     result.style.display = "inline-block";
   }
 }
+
+window.addEventListener('DOMContentLoaded', getQuestions)
+
+async function getQuestions() {
+fetch("assets/data/questions.json")
+.then(res => {
+    return res.json();
+})
+.then(loadedQuestions => {
+    const availableQuestions = loadedQuestions[0].questionList[questionNumber].answerFour
+    console.log(availableQuestions);
+
+    questionRef.innerHTML = loadedQuestions[0].questionList[questionNumber].question
+    answerOneLabel.innerHTML = loadedQuestions[0].questionList[questionNumber].answerOne
+    answerTwoLabel.innerHTML = loadedQuestions[0].questionList[questionNumber].answerTwo
+    answerThreeLabel.innerHTML = loadedQuestions[0].questionList[questionNumber].answerThree
+    answerFourLabel.innerHTML= loadedQuestions[0].questionList[questionNumber].answerFour
+    
+    answerOne.value = loadedQuestions[0].questionList[questionNumber].answerOneTag
+    answerTwo.value = loadedQuestions[0].questionList[questionNumber].answerTwoTag
+    answerThree.value = loadedQuestions[0].questionList[questionNumber].answerThreeTag
+    answerOne.Four= loadedQuestions[0].questionList[questionNumber].answerFourTag
+
+   
+})
+}
+    
+
+ 
+
+// takeQuizBtn.addEventListener('click', () => {
+//     question.innerHTML = quizQuestion; 
+// });
+
+
+
