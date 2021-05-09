@@ -218,13 +218,7 @@ async function fetchAllResults(){
     }
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> ea240e10875bf7e0b89e3abf786f67c704ab53f6
-document.addEventListener("click",function (event) {
+gitdocument.addEventListener("click",function (event) {
 		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
 		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
 			closeModal();
