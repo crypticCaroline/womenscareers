@@ -36,7 +36,7 @@ body {
   font-family: "Itim", cursive;
 }
 /* HERO-TEXT BUTTON */
-#quiz-btn {
+.btn {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   border: none;
