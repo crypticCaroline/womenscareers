@@ -26,10 +26,13 @@ body {
   text-transform: uppercase;
   font-family: "Indie Flower", cursive;
 }
-
+h1 {
+  color: #0b525b;
+}
 #tag {
   font-size: 1.5rem;
   font-family: "Itim", cursive;
+  color: #0b525b;
 }
 
 #head-line {
