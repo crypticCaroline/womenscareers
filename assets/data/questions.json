@@ -24,25 +24,27 @@
 
         },
         {
-            "question": "TEAMWORK & COMMUNICATION",
-            "answerOne": "Answer 1",
+            "question": "You are working on a project and you are assigned to a team. You will:",
+            "answerOne": "Take the lead on the project and help everyone with what needs to be done",
             "answerOneTag": "teamwork1",
-            "answerTwo": "Answer 2",
+            "answerTwo": "Sit quietly and do the tasks they assign to you and work hard to finish them",
             "answerTwoTag": "teamwork2",
-            "answerThree": "Answer 3",
-            "answerThreeTag": "data"
+            "answerThree": "Working between stakeholders and the rest of the team",
+            "answerThreeTag": "system",
+            "answerFour": "Be excited to work with others, brainstorm and come up with solutions together", 
+            "answerFourTag": "analytical2"
 
         },
         {
-            "question": "EMPATHY",
-            "answerOne": "Answer 1",
-            "answerOneTag": "UX",
-            "answerTwo": "Answer 2",
+            "question": "Your colleage told you a story about their recent break up and they are upset. Your reaction is:",
+            "answerOne": "I become irritated when someone cries.",
+            "answerOneTag": "data",
+            "answerTwo": "I get a strong urge to help when I see someone who is upset.",
             "answerTwoTag": "empathy2",
-            "answerThree": "Answer 3",
+            "answerThree": "I sometimes find it difficult to see things from the other person’s point of view.",
             "answerThreeTag": "system",
-            "answerFour": "Answer 4",
-            "answerFourTag": "data"
+            "answerFour": "I will try to convince them that this is the best thing that could have happen to them and support with facts to prove it!",
+            "answerFourTag": "creativity1"
 
         },
         {
@@ -58,15 +60,15 @@
 
         },
         {
-            "question": "PROBLEM SOLVING & CRITICAL THINKER",
-            "answerOne": "Answer 1",
+            "question": "You went on an off road trip with a friend and your tire was punctured far from the city. What do you do?",
+            "answerOne": "I ask myself lots of different questions about how we end up here.",
             "answerOneTag": "problemsolving1",
-            "answerTwo": "Answer 2",
+            "answerTwo": "I come up with a solution and start immplementing it immediately",
             "answerTwoTag": "problemsolving2",
-            "answerThree": "If you don't like problem solving at all... Forget about working in tech lol",
-            "answerThreeTag": "none",
-            "answerFour": "If you don't like problem solving at all... Forget about working in tech lol",
-            "answerFourTag": "none"
+            "answerThree": "I blame my friend and his driving skills",
+            "answerThreeTag": "details1",
+            "answerFour": "I start thinking of all the things I could have been doing instead of coming here ",
+            "answerFourTag": "maths3"
 
         },
         {
