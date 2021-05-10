@@ -3,14 +3,14 @@
         "cyber": {
             "title": "Ethical Hacker / Cyber Security",
             "content": "An ethical hacker is an information security expert who systematically attempts to penetrate a computer system, network, application or other computing resource on behalf of its owners To help strengthen their cyber security",
-            "link": "resources/cyber-security.html",
+            "link": "cyber-security.html.html",
             "photo": "assets/images/hacker.png"
 
         },
         "manager": {
             "title": "Technical Project Manager",
             "content": "As a Techincal Project Manager expert..............",
-            "link": "resources/project-manager",
+            "link": "project-manager.html",
             "photo": "assets/images/manager.png"
         },
 
