@@ -219,7 +219,7 @@ async function fetchAllResults() {
         let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
         let image = document.createElement("img");
         let link = document.createElement("a")
-        let linkText = document.createTextNode("Learn more about " + nextJob + "!")
+        let linkText = document.createTextNode("Learn more about " + resultObj.resultsList[nextJob]['title'] + "!")
         let percentage = document.createElement('p')
         let percentageText = findPercentage(finalResult[resultCard].points)
         link.className = "btn btn-primary white-link"
