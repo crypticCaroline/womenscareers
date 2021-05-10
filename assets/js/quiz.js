@@ -208,9 +208,6 @@ async function fetchAllResults(){
 }
 
 
-<<<<<<< HEAD
-}
-=======
 document.addEventListener("click",function (event) {
 		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
 		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
@@ -223,4 +220,3 @@ document.addEventListener("click",function (event) {
 function closeModal() {
 	document.querySelector("#results-modal").style.display = "none";
 }
->>>>>>> 6b115271d8992728600847e180c68d8a2aff0e48
