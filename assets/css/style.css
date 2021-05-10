@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&family=Itim&family=Indie+Flower&&display=swap");
 /* UTILITIES */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 body {
   margin: 0;
   height: 100vh;
@@ -43,7 +44,40 @@ h1 {
 #head-line {
   font-family: "Itim", cursive;
 }
+
 /* HERO-TEXT BUTTON */
+#quiz-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: #0b525b;
+    background-color: #caf0f8;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    opacity: 0;
+    -webkit-animation-name: animation-btn;
+    animation-name: animation-btn;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
 .btn {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -85,13 +119,15 @@ h1 {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
+
 @keyframes animation-btn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* TEXT ANIMATION */
@@ -130,10 +166,11 @@ h1 {
     opacity: 1;
   }
 }
+
 /* QUIZ */
 
 #quiz {
-  position: relative;
+    position: relative;
 }
 
 h2.title {
@@ -147,10 +184,10 @@ h2.title {
 }
 
 .horizontal-center {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  width: 60%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
 }
 
 #quiz-container {
@@ -212,43 +249,43 @@ h2.title {
 }
 
 #quiz ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #quiz li {
-  margin: 5px auto;
-  border: 2px solid #caf0f8;
-  border-radius: 5px;
-  width: 80%;
-  text-align: justify;
+    margin: 5px auto;
+    border: 2px solid #caf0f8;
+    border-radius: 5px;
+    width: 80%;
+    text-align: justify;
 }
 
 input {
-  display: none;
+    display: none;
 }
 
-input:checked + label {
-  color: #207d8a;
-  background-color: #caf0f8;
+input:checked+label {
+    color: #207d8a;
+    background-color: #caf0f8;
 }
 
-input:hover + label {
-  color: #207d8a;
-  background-color: #caf0f8;
-  }
+input:hover+label {
+    color: #207d8a;
+    background-color: #caf0f8;
+}
 
 label {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  padding: 1% 2%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 1% 2%;
 }
 
 #quiz label {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 
@@ -278,12 +315,13 @@ label {
 }
 
 .next-btn:hover {
-  border: 2px solid #fff;
+    border: 2px solid #fff;
 }
 
 .try-again-btn:hover {
-  border: 2px solid white;
+    border: 2px solid white;
 }
+
 .try-again-btn {
   text-decoration: none;
 }
@@ -292,15 +330,16 @@ label {
 
 /* Modal background */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #caf0f8;
@@ -312,32 +351,35 @@ label {
   font-size: 1.5rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 /* The Close Button */
 .close {
-  color: #ddd;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #ddd;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .try-again-btn {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
-  text-align: center;
-  cursor: pointer;
-  margin: 0 auto;
-  box-shadow: 2px 2px 2px black;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px black;
 }
+
 /*RESULT CARD*/
 .card {
 
@@ -353,6 +395,7 @@ label {
     width: 40rem;
 
 }
+
 .card-text {
   color: #ddd;
   padding: 20px 20px;
@@ -361,11 +404,12 @@ label {
 }
 
 .card-title {
-  color: #ddd;
-  text-align: center;
-  font-size: x-large;
-  margin: 10px 10px;
+    color: #ddd;
+    text-align: center;
+    font-size: x-large;
+    margin: 10px 10px;
 }
+
 .image {
   display: flex;
   padding: 10px;
@@ -382,10 +426,11 @@ label {
   display: flex;
   justify-content: center;
 }
+
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #results-modal, #all-results-modal {
@@ -400,32 +445,37 @@ label {
 }
 
 .button-close-modal {
-  display: block;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-left: auto;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: auto;
 }
 
 #results-div {
-    padding:10%;
+    padding: 10%;
+
+}
+
+#career-div,
+#results-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
 }
 
 .results-card {
-    justify-content: space-between;
     background-color: rgba(11, 82, 91, 1);
-    align-content: center;
-    align-items: center;
     width: 31.3%;
     display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     margin: 1%;
     color: white;
     font-family: "New Tegomin", serif;
-    box-shadow: 0px 2px 5px rgb(255 255 255 / 20%);
+    box-shadow: 0px 2px 15px rgb(31 37 75 / 80%);
     padding-left: 1.5%;
     padding-right: 1.5%;
     padding-bottom: 5%;
+    align-items: center;
+    flex-direction: column;
 }
 
 .results-card img {
@@ -435,7 +485,7 @@ label {
 
 .results-card h5 {
     font-size: 1.4rem;
-    border-bottom: brown 1px    
+    border-bottom: brown 1px
 }
 
 .results-card p {
@@ -445,16 +495,17 @@ label {
 
 .results-card:last-child {
     margin-right: 35%;
-    margin-left:35%;
+    margin-left: 35%;
 }
 
 @keyframes zoomIn {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Resources*/
@@ -472,19 +523,19 @@ label {
 }
 
 .women img {
-  width: 300px;
-  float: left;
-  margin: 0 10px 10px 0;
+    width: 300px;
+    float: left;
+    margin: 0 10px 10px 0;
 }
 
 .resources-card h3 {
-  clear: both;
+    clear: both;
 }
 
 .resources-card p {
-  padding: 0 30px;
-  text-indent: 2em;
-  text-align: justify;
+    padding: 0 30px;
+    text-indent: 2em;
+    text-align: justify;
 }
 
 .resources-card a {
@@ -537,18 +588,22 @@ label {
   }
 
 }
-@media only screen and (max-width: 600px) {
-  .hero-text {
-    font-size: 1rem;
-  }
-  .results-card {
-      width: 100%;
-  }
-  .results-card:last-child {
-    margin: 1%;
 
-}
-.card {
+@media only screen and (max-width: 600px) {
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .results-card {
         width: 100%;
-}
+    }
+
+    .results-card:last-child {
+        margin: 1%;
+
+    }
+
+    .card {
+        width: 100%;
+    }
 }
