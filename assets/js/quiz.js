@@ -59,7 +59,7 @@ let jobList = [{
     {
         role: "system",
         points: 0,
-        groups: ["teamwork2", "problemsolving1", "creativity4", "curiosity2"],
+        groups: [ "problemsolving1", "creativity4", "curiosity2"],
     },
 ];
 
