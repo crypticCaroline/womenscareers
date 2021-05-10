@@ -221,6 +221,7 @@ async function fetchAllResults() {
         let linkText = document.createTextNode("Learn more about " + nextJob + "!")
         let percentage = document.createElement('p')
         let percentageText = findPercentage(finalResult[resultCard].points)
+        link.classList = "white-link"
 
         percentage.className = "percentage"
         percentage.innerHTML = (percentageText + "%")
