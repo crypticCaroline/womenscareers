@@ -270,4 +270,3 @@ function findPercentage(points) {
     return total;
 
 }
-
