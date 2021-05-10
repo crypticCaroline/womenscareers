@@ -91,7 +91,7 @@ h1 {
   text-align: center;
   cursor: pointer;
   border-radius: 15px;
-      line-height: 25px;
+  line-height: 25px;
 }
 .btn:hover {
   border: 2px solid white;
@@ -462,26 +462,30 @@ label {
 }
 
 #all-careers p,
-#all-careers a, #results-card p, #results-card a{
-    display: flex;
-    justify-content: space-evenly;
+#all-careers a,
+#results-card p,
+#results-card a {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#all-careers a, #results-card a, .white-link{
-    text-decoration: underline;
-    color: #0b525b;
-    font-size: 1rem;
-    background-color: #f7fcff;
+#all-careers a,
+#results-card a,
+.white-link {
+  text-decoration: underline;
+  color: #0b525b;
+  font-size: 1rem;
+  background-color: #f7fcff;
 }
 
 #all-careers a:hover {
-    font-size-adjust: 110%;
+  font-size-adjust: 110%;
 }
 
 .results-img {
-    height: 330px;
-    width: 280px;
-    object-fit: cover;
+  height: 330px;
+  width: 280px;
+  object-fit: cover;
 }
 
 .results-card {
@@ -585,31 +589,31 @@ label {
 }
 
 .resources li a {
-    text-decoration: underline;
-    color:white;
+  text-decoration: underline;
+  color: white;
 }
 
 #all-careers p,
- #results-card p, #results-card a{
-    display: flex;
-    justify-content: space-evenly;
+#results-card p,
+#results-card a {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #all-careers a {
-    text-decoration: underline;
-    color:  #0b525b;
-    font-size: 1rem;
+  text-decoration: underline;
+  color: #0b525b;
+  font-size: 1rem;
 }
 
 #all-careers a:hover {
-    font-size-adjust: 110%;
+  font-size-adjust: 110%;
 }
 
-
 .results-img {
-    height: 330px;
-    width: 280px;
-    object-fit: cover;
+  height: 330px;
+  width: 280px;
+  object-fit: cover;
 }
 
 /*  MEDIA QUERY */
@@ -637,10 +641,6 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
-  .hero-text {
-    font-size: 1rem;
-  }
-
   .results-card {
     width: 100%;
   }
@@ -651,5 +651,17 @@ label {
 
   .card {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .text-animation {
+    line-height: 40px;
+  }
+  .btn {
+    font-size: small;
+    padding: 0 0.5rem;
+  }
+  .delay {
+    line-height: 25px;
   }
 }
