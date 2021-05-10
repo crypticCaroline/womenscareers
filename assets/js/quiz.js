@@ -205,7 +205,7 @@ async function fetchAllResults(){
 
 }
 
-}
+
 
 
 document.addEventListener("click",function (event) {
