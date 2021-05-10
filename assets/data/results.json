@@ -2,51 +2,53 @@
     "resultsList": {
         "cyber": {
             "title": "Ethical Hacker / Cyber Security",
-            "content": "An ethical hacker is an information security expert who systematically attempts to penetrate a computer system, network, application or other computing resource on behalf of its owners To help strengthen their cyber security",
-            "link": "cyber-security.html",
-            "photo": "assets/images/hacker.png"
+            "content": "As a cyber expert..............",
+            "link": "resources/cybersecurity.html",
+            "photo": ""
 
         },
         "manager": {
             "title": "Technical Project Manager",
-            "content": "A hybrid role encompassing both tech guru and inspiring leader, a technical project manager is instrumental in the planning, scheduling, and management of IT and IT-related projects. ",
-            "link": "project-manager.html",
-            "photo": "assets/images/manager.png"
+            "content": "As a Techincal Project Manager expert..............",
+            "link": "resources/projectmanager",
+            "photo": ""
+
         },
 
         "ux": {
             "title": "UX Designer",
-            "content": "Those who work on UX (called UX designers) study and evaluate how users feel about a system, looking at such things as ease of use, perception of the value of the system, utility, efficiency in performing tasks and so forth.",
-            "link": "ux-designer.html",
-            "photo": "assets/images/ux.png"
+            "content": "As a UX designer..............",
+            "link": "resources/uxdesigner",
+            "photo": ""
 
         },
         "system": {
             "title": "Systems Architecture",
-            "content": "The system architect role is vital to the successful definition, design, delivery, and support of any IT project. A system architect analyzes and recommends the right combination of IT components to achieve a specific business, department, team, or functional goal.",
-            "link": "systems-architect.html",
-            "photo": "assets/images/systems.png"
+            "content": "As a Systems.............",
+            "link": "resources/systemsarchitecture.html",
+            "photo": ""
         },
         "game": {
             "title": "Games Developer",
-            "content": "They take the video game designer's ideas, drawings and rules, and turn them into a playable game with visuals and sound through writing code. The work of a games developer typically involves: Looking at the design specifications of video game designers. Writing code to turn the designer's concepts into a playable game.",
-            "link": "game-developer.html",
-            "photo": "assets/images/games.png"
+            "content": "As a games expert..............",
+            "link": "resources/gamedeveloper.html",
+            "photo": ""
 
         },
         "software": {
             "title": "Software Engineer",
-            "content": "As a software engineer, you'll work in a constantly evolving environment, due to technological advances and the strategic direction of the organisation you work for. You'll create, maintain, audit and improve systems to meet particular needs, often as advised by a systems analyst or architect, testing both hard and software systems to diagnose and resolve system faults.",
-            "link": "software-engineer.html",
-            "photo": "assets/images/software.png"
+            "content": "As Software Engineer..............",
+            "link": "resources/softwareengineer.html",
+            "photo": ""
 
         },
         "data": {
             "title": "Data Analysist",
-            "content": "A data analyst is someone who scrutinises information using data analysis tools. The meaningful results they pull from the raw data help their employers or clients make important decisions by identifying various facts and trends. Typical duties include: using advanced computerised models to extract the data needed.",
-            "link": "data-analysist.html",
-            "photo": "assets/images/data.png"
+            "content": "As a Data..............",
+            "link": "resources/dataanalysist.html",
+            "photo": ""
 
         }
     }
+
 }
