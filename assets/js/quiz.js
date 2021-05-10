@@ -289,13 +289,9 @@ for (let resultCard in finalResult) {
     image.src = resultObj.resultsList[nextJob]["photo"];
     link.href = resultObj.resultsList[nextJob]["link"];
 
-<<<<<<< HEAD
-
-=======
     heading.appendChild(headingText);
     content.appendChild(contentText);
     link.appendChild(linkText);
->>>>>>> fdf6d2a6193afa5052836826bb7735141b616e8a
 
     resultCardDiv.append(heading, percentage, contentText, image, link);
     resultDiv.appendChild(resultCardDiv);
