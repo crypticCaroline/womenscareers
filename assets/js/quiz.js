@@ -196,7 +196,8 @@ async function fetchResult() {
     jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
     jobImage.src = resultObj.resultsList[jobRoleOne]['photo']
     jobLink.href = resultObj.resultsList[jobRoleOne]['link']
-    jobLink.innerHTML = resultObj.resultsList[jobRoleOne]['title']
+    jobLink.innerHTML = ("Learn more about " + resultObj.resultsList[jobRoleOne]['title'] + "!")
+    jobLink.className = "btn btn-primary white-link"
 }
 
 async function fetchAllResults() {
@@ -221,7 +222,7 @@ async function fetchAllResults() {
         let linkText = document.createTextNode("Learn more about " + nextJob + "!")
         let percentage = document.createElement('p')
         let percentageText = findPercentage(finalResult[resultCard].points)
-        link.classList = "white-link"
+        link.className = "btn btn-primary white-link"
 
         percentage.className = "percentage"
         percentage.innerHTML = (percentageText + "%")

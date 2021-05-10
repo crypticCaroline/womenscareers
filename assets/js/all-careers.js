@@ -63,6 +63,7 @@ async function allCareers(){
 
         careerCardDiv.className = "results-card"
         image.src = resultObj.resultsList[nextJob]['photo'];
+        link.className = "btn btn-primary white-link"
         link.href = resultObj.resultsList[nextJob]['link'];
 
 
