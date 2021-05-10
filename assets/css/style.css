@@ -91,6 +91,7 @@ h1 {
   text-align: center;
   cursor: pointer;
   border-radius: 15px;
+      line-height: 25px;
 }
 .btn:hover {
   border: 2px solid white;
@@ -468,8 +469,9 @@ label {
 
 #all-careers a, #results-card a, .white-link{
     text-decoration: underline;
-    color: white;
+    color: #0b525b;
     font-size: 1rem;
+    background-color: #f7fcff;
 }
 
 #all-careers a:hover {
