@@ -25,6 +25,7 @@ let jobRoleSeven;
 let answer;
 window.addEventListener('DOMContentLoaded', getQuestions)
 
+
 let jobList = [{
         role: "cyber",
         points: 0,
@@ -73,67 +74,72 @@ function nextQuestion() {
             answer = false
         }
     }
-    if (!answer) {
-        alert("Please select an option");
-        return;
-    }
-    addResult(answer);
-    resetRadio();
-    questionNumber++;
-    getQuestions();;
+  }
+  if (!answer) {
+    alert("Please select an option");
+    return;
+  
+  addResult(answer);
+  resetRadio();
+  questionNumber++;
+  getQuestions();
 }
 
-
 function addResult(answer) {
-    for (var i = 0; i < jobList.length; i++) {
-        if (jobList[i].role == answer) {
-            jobList[i].points++;
-            break;
-        } else {
-            let group = jobList[i].groups;
-            if (group.includes(answer)) {
-                jobList[i].points++;
-            }
-        }
+  for (var i = 0; i < jobList.length; i++) {
+    if (jobList[i].role == answer) {
+      jobList[i].points++;
+      break;
+    } else {
+      let group = jobList[i].groups;
+      if (group.includes(answer)) {
+        jobList[i].points++;
+      }
     }
+  }
 }
 
 function showResult() {
+
     calculateResult();
     formatResults();
     fetchResult();
+
 }
 
 function calculateResult() {
-    finalResult = jobList.slice(0);
-    finalResult.sort(function (a, b) {
-        return b.points - a.points;
-    });
+  finalResult = jobList.slice(0);
+  finalResult.sort(function (a, b) {
+    return b.points - a.points;
+  });
 }
 
 function showResultsModal() {
+
     resultsModal = document.getElementById("results-modal");
     resultsModal.style.display = "flex";
+
 }
 
 function resetRadio() {
-    let radioBtns = document.getElementsByClassName("reset-btn");
-    for (i = 0; i < radioBtns.length; i++) {
-        if ((radioBtns[i].checked = true)) {
-            radioBtns[i].checked = false;
-        }
+  let radioBtns = document.getElementsByClassName("reset-btn");
+  for (i = 0; i < radioBtns.length; i++) {
+    if ((radioBtns[i].checked = true)) {
+      radioBtns[i].checked = false;
     }
+  }
 }
 
 function formatResults() {
-    jobRoleOne = finalResult[0].role;
-    jobRoleTwo = finalResult[1].role;
-    jobRoleThree = finalResult[2].role;
-    jobRoleFour = finalResult[3].role;
-    jobRoleFive = finalResult[4].role;
-    jobRoleSix = finalResult[5].role;
-    jobRoleSeven = finalResult[6].role;
+  jobRoleOne = finalResult[0].role;
+  jobRoleTwo = finalResult[1].role;
+  jobRoleThree = finalResult[2].role;
+  jobRoleFour = finalResult[3].role;
+  jobRoleFive = finalResult[4].role;
+  jobRoleSix = finalResult[5].role;
+  jobRoleSeven = finalResult[6].role;
 }
+
 
 async function getQuestions() {
     questionNumberText = (questionNumber + 1)
@@ -244,6 +250,7 @@ document.addEventListener("click", function (event) {
 
 function closeModal() {
     document.querySelector("#results-modal").style.display = "none";
+
 }
 
 function closeModalResults() {
