@@ -120,6 +120,7 @@ function nextQuestion() {
 if (!answer) {
   alert("Please select an option");
   return;
+
   addResult(answer);
   resetRadio();
   questionNumber++;
