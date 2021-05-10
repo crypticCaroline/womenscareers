@@ -560,6 +560,29 @@ label {
   text-align: center;
 }
 
+#all-careers p,
+#all-careers a, #results-card p, #results-card a{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#all-careers a {
+    text-decoration: underline;
+    color:  #0b525b;
+    font-size: 1rem;
+}
+
+#all-careers a:hover {
+    font-size-adjust: 110%;
+}
+
+
+.results-img {
+    height: 330px;
+    width: 280px;
+    object-fit: cover;
+}
+
 /*  MEDIA QUERY */
 @media only screen and (max-width: 800px) {
   #body-image {
