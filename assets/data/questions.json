@@ -64,9 +64,19 @@
             "answerTwo": "Answer 2",
             "answerTwoTag": "problemsolving2",
             "answerThree": "If you don't like problem solving at all... Forget about working in tech lol",
-            "answerThreeTag": "none",
-            "answerFour": "If you don't like problem solving at all... Forget about working in tech lol",
-            "answerFourTag": "none"
+            "answerThreeTag": ""
+
+        },
+        {
+            "question": "What was your favorite toy as a kid?",
+            "answerOne": "A Rubik's cube.",
+            "answerOneTag": "data",
+            "answerTwo": "An Etch A Sketch tablet.",
+            "answerTwoTag": "analytical2",
+            "answerThree": "A Gameboy.",
+            "answerThreeTag": "game",
+            "answerFour": "Lego bricks.",
+            "answerFourTag": "system"
 
         },
         {

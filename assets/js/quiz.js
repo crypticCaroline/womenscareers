@@ -1,5 +1,3 @@
-
-// Variables for project 
 let finalResult;
 let questionNumber = 0;
 const next = document.getElementById("next");
@@ -14,7 +12,6 @@ let answerThreeLabel = document.getElementById("answerThreeLabel");
 let answerFourRef = document.getElementById("answerFour");
 let answerFourLabel = document.getElementById("answerFourLabel");
 let radioBtns = document.getElementsByClassName("reset-btn");
-let questionNumberBox = document.getElementById("question-number")
 let jobRoleOne;
 let jobRoleTwo;
 let jobRoleThree;
@@ -23,137 +20,134 @@ let jobRoleFive;
 let jobRoleSix;
 let jobRoleSeven;
 let answer;
-window.addEventListener('DOMContentLoaded', getQuestions)
-
 
 let jobList = [{
         role: "cyber",
         points: 0,
-        groups: ["maths3", "details", "teamwork2", "empathy2", "problemsolving1", "creativity3", "curiosity1", "planning4", "analytical2"],
+        groups: ["web", "maths", "manager"],
     },
     {
         role: "ux",
         points: 0,
-        groups: ["details", "teamwork2", "analystical2", "problemsolving2", "curiosity2", "planning1"],
+        groups: ["web", "design"],
     },
     {
         role: "manager",
         points: 0,
-        groups: ["empathy2", "teamwork1", "analystical2", "problemsolving2", "creativity3", "curiosity1", "planning1"],
+        groups: ["web", "maths", "computers"],
     },
     {
         role: "software",
         points: 0,
-        groups: ["maths3", "teamwork1", "analystical2", "problemsolving1", "creativity1", "curiosity1", "planning1"],
+        groups: ["web", "maths", "computers"],
     },
     {
         role: "game",
         points: 0,
-        groups: ["maths1", "teamwork2", "details1", "problemsolving1", "creativity1", "curiosity2"],
+        groups: ["web", "maths", "computers"],
     },
     {
         role: "data",
         points: 0,
-        groups: ["maths1", "details1", "problemsolving1", "creativity4", "planning4"],
+        groups: ["web", "maths", "computers"],
     },
     {
         role: "system",
         points: 0,
-        groups: ["teamwork2", "problemsolving1", "creativity4", "curiosity2"],
+        groups: ["web", "maths", "computers"],
     },
 ];
-
-// Functions 
 
 function nextQuestion() {
     for (i = 0; i < radioBtns.length; i++) {
         if (radioBtns[i].checked == true) {
             answer = radioBtns[i].value;
-            break;
-        } else {
-            answer = false
         }
     }
-  
-  if (!answer) {
-    alert("Please select an option");
-    return;
-  }
-  addResult(answer);
-  resetRadio();
-  questionNumber++;
-  getQuestions();
+    if (!answer) {
+        alert("Please select an option");
+        return;
+    }
+    addResult(answer);
+    resetRadio();
+    questionNumber++;
+    getQuestions();;
 }
 
+
 function addResult(answer) {
-  for (var i = 0; i < jobList.length; i++) {
-    if (jobList[i].role == answer) {
-      jobList[i].points++;
-      break;
-    } else {
-      let group = jobList[i].groups;
-      if (group.includes(answer)) {
-        jobList[i].points++;
-      }
+    for (var i = 0; i < jobList.length; i++) {
+        if (jobList[i].role == answer) {
+            jobList[i].points++;
+            break;
+        } else {
+            let group = jobList[i].groups;
+            if (group.includes(answer)) {
+                jobList[i].points++;
+            }
+        }
     }
-  }
 }
 
 function showResult() {
-
     calculateResult();
     formatResults();
     fetchResult();
-
+    fetchAllResults();
 }
 
 function calculateResult() {
-  finalResult = jobList.slice(0);
-  finalResult.sort(function (a, b) {
-    return b.points - a.points;
-  });
+    finalResult = jobList.slice(0);
+    finalResult.sort(function (a, b) {
+        return b.points - a.points;
+    });
 }
 
+
 function showResultsModal() {
-
     resultsModal = document.getElementById("results-modal");
-    resultsModal.style.display = "flex";
+    jobHeading = document.getElementById("job-title");
+    jobContent = document.getElementById("job-content");
+    jobImage = document.getElementById("job-image");
 
+    // jobHeading.innerHTML = jobRoleOne.heading
+    // jobContent.innerHTML = jobRoleOne
+    resultsModal.style.display = "flex";
 }
 
 function resetRadio() {
-  let radioBtns = document.getElementsByClassName("reset-btn");
-  for (i = 0; i < radioBtns.length; i++) {
-    if ((radioBtns[i].checked = true)) {
-      radioBtns[i].checked = false;
+    let radioBtns = document.getElementsByClassName("reset-btn");
+    for (i = 0; i < radioBtns.length; i++) {
+        if ((radioBtns[i].checked = true)) {
+            radioBtns[i].checked = false;
+        }
     }
-  }
+}
+
+function checkQuestions() {
+    if (questionNumber > 2) {
+        next.style.display = "none";
+        result.style.display = "inline-block";
+        return
+    }
 }
 
 function formatResults() {
-  jobRoleOne = finalResult[0].role;
-  jobRoleTwo = finalResult[1].role;
-  jobRoleThree = finalResult[2].role;
-  jobRoleFour = finalResult[3].role;
-  jobRoleFive = finalResult[4].role;
-  jobRoleSix = finalResult[5].role;
-  jobRoleSeven = finalResult[6].role;
+    jobRoleOne = finalResult[0].role;
+    jobRoleTwo = finalResult[1].role;
+    jobRoleThree = finalResult[2].role;
+    jobRoleFour = finalResult[3].role;
+    jobRoleFive = finalResult[4].role;
+    jobRoleSix = finalResult[5].role;
+    jobRoleSeven = finalResult[6].role;
 }
 
+window.addEventListener('DOMContentLoaded', getQuestions)
 
 async function getQuestions() {
-    questionNumberText = (questionNumber + 1)
-    quizForm = document.getElementById("quiz-form")
-    quizHeading = document.getElementById("question")
-    if (questionNumber == 8) {
-        next.innerHTML = "Submit Quiz";
-    } else if (questionNumber == 9) {
-        next.style.display = "none";
-        result.style.display = "inline-block";
-        quizForm.style.display = "none";
-        quizHeading.innerHTML = "Time to get your results!"
-        questionNumberBox.style.display = "none"
-        return;
+    if (questionNumber >  2) {
+        checkQuestions()
+        return
     }
     fetch("assets/data/questions.json")
         .then(res => {
@@ -172,8 +166,6 @@ async function getQuestions() {
             answerThreeRef.value = loadedQuestions[0].questionList[questionNumber].answerThreeTag
             answerFourRef.value = loadedQuestions[0].questionList[questionNumber].answerFourTag
 
-            questionNumberBox.innerHTML = questionNumberText + "/9"
-
 
         })
 }
@@ -187,87 +179,48 @@ async function fetchResult() {
     let jobContent = document.getElementById("job-content");
     let jobImage = document.getElementById("job-image");
     let jobLink = document.getElementById('job-link')
-    let percentage = document.getElementById('percentage')
-    let percentageText = findPercentage(finalResult[0].points)
-
-    percentage.innerHTML = (percentageText + "%")
     resultsModal.style.display = "flex";
     jobHeading.innerHTML = resultObj.resultsList[jobRoleOne]['title']
     jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
     jobImage.src = resultObj.resultsList[jobRoleOne]['photo']
     jobLink.href = resultObj.resultsList[jobRoleOne]['link']
-    jobLink.innerHTML = ("Learn more about " + resultObj.resultsList[jobRoleOne]['title'] + "!")
-    jobLink.className = "btn btn-primary white-link"
 }
 
-async function fetchAllResults() {
-    // Gets the correct data from the json file
+async function fetchAllResults(){
     let response = await fetch('assets/data/results.json');
     let data = await response.text();
     let resultObj = await JSON.parse(data)
     let resultDiv = document.getElementById("results-div")
-    let resultsModal = document.getElementById("results-modal")
-    let allResultsModal = document.getElementById("all-results-modal")
+    console.log(finalResult)
 
-    // Searches through the json file in the order of the job scores
     for (let resultCard in finalResult) {
-        nextJob = finalResult[resultCard].role
-        let resultCardDiv = document.createElement("div")
+        console.log(resultCard)
+        console.log(resultCard['title'])
         let heading = document.createElement("h5");
-        let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
-        let content = document.createElement("p");
-        let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
-        let image = document.createElement("img");
-        let link = document.createElement("a")
-        let linkText = document.createTextNode("Learn more about " + nextJob + "!")
-        let percentage = document.createElement('p')
-        let percentageText = findPercentage(finalResult[resultCard].points)
-        link.className = "btn btn-primary white-link"
-
-        percentage.className = "percentage"
-        percentage.innerHTML = (percentageText + "%")
-        resultCardDiv.className = "results-card"
-        image.src = resultObj.resultsList[nextJob]['photo'];
-        link.href = resultObj.resultsList[nextJob]['link'];
-
-
+        let headingText = document.createTextNode(resultObj.resultsList[finalResult[resultCard].role]['title'])
         heading.appendChild(headingText)
-        content.appendChild(contentText)
-        link.appendChild(linkText)
+        resultDiv.append(heading);
 
-        resultCardDiv.append(heading, percentage, contentText, image, link);
-        resultDiv.appendChild(resultCardDiv);
-        resultsModal.style.display = "none"
-        allResultsModal.style.display = "inline-block"
     }
+
 }
 
-document.addEventListener(
-  "click",
-  function (event) {
-    // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
-    if (
-      event.target.matches(".button-close-modal") ||
-      event.target.matches("#results-modal")
-    ) {
-      closeModal();
-    }
-  },
-  false
+}
+
+
+<<<<<<< HEAD
+}
+=======
+document.addEventListener("click",function (event) {
+		// If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+		if (event.target.matches(".button-close-modal") || event.target.matches("#results-modal")) {
+			closeModal();
+		}
+	},
+	false
 );
 
 function closeModal() {
-    document.querySelector("#results-modal").style.display = "none";
-
+	document.querySelector("#results-modal").style.display = "none";
 }
-
-function closeModalResults() {
-    document.querySelector("#all-results-modal").style.display = "none";
-}
-
-function findPercentage(points) {
-    let total = (100 / 9) * points;
-    total = Math.round(total);
-    return total;
-
-}
+>>>>>>> 6b115271d8992728600847e180c68d8a2aff0e48
