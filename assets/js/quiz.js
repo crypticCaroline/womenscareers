@@ -118,15 +118,16 @@ function nextQuestion() {
     } else {
       answer = false;
     }
-  
-  if (!answer) {
-    alert("Please select an option");
-    return;
+
+    if (!answer) {
+      alert("Please select an option");
+      return;
+    }
+    addResult(answer);
+    resetRadio();
+    questionNumber++;
+    getQuestions();
   }
-  addResult(answer);
-  resetRadio();
-  questionNumber++;
-  getQuestions();
 }
 
 function addResult(answer) {
