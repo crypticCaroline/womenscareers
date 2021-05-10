@@ -3,13 +3,13 @@
         "cyber": {
             "title": "Ethical Hacker / Cyber Security",
             "content": "An ethical hacker is an information security expert who systematically attempts to penetrate a computer system, network, application or other computing resource on behalf of its owners To help strengthen their cyber security",
-            "link": "cyber-security.html.html",
+            "link": "cyber-security.html",
             "photo": "assets/images/hacker.png"
 
         },
         "manager": {
             "title": "Technical Project Manager",
-            "content": "As a Techincal Project Manager expert..............",
+            "content": "A hybrid role encompassing both tech guru and inspiring leader, a technical project manager is instrumental in the planning, scheduling, and management of IT and IT-related projects. ",
             "link": "project-manager.html",
             "photo": "assets/images/manager.png"
         },

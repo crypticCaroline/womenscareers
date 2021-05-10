@@ -225,6 +225,7 @@ async function getQuestions() {
 }
 
 async function fetchResult() {
+<<<<<<< HEAD
   let response = await fetch("assets/data/results.json");
   let data = await response.text();
   let resultObj = await JSON.parse(data);
@@ -288,6 +289,69 @@ async function fetchAllResults() {
     resultsModal.style.display = "none";
     allResultsModal.style.display = "inline-block";
   }
+=======
+    let response = await fetch('assets/data/results.json');
+    let data = await response.text();
+    let resultObj = await JSON.parse(data)
+    let resultsModal = document.getElementById("results-modal");
+    let jobHeading = document.getElementById("job-title");
+    let jobContent = document.getElementById("job-content");
+    let jobImage = document.getElementById("job-image");
+    let jobLink = document.getElementById('job-link')
+    let percentage = document.getElementById('percentage')
+    let percentageText = findPercentage(finalResult[0].points)
+
+    percentage.innerHTML = (percentageText + "%")
+    resultsModal.style.display = "flex";
+    jobHeading.innerHTML = resultObj.resultsList[jobRoleOne]['title']
+    jobContent.innerHTML = resultObj.resultsList[jobRoleOne]['content']
+    jobImage.src = resultObj.resultsList[jobRoleOne]['photo']
+    jobLink.href = resultObj.resultsList[jobRoleOne]['link']
+    jobLink.innerHTML = ("Learn more about " + resultObj.resultsList[jobRoleOne]['title'] + "!")
+    jobLink.className = "btn btn-primary white-link"
+}
+
+async function fetchAllResults() {
+    // Gets the correct data from the json file
+    let response = await fetch('assets/data/results.json');
+    let data = await response.text();
+    let resultObj = await JSON.parse(data)
+    let resultDiv = document.getElementById("results-div")
+    let resultsModal = document.getElementById("results-modal")
+    let allResultsModal = document.getElementById("all-results-modal")
+
+    // Searches through the json file in the order of the job scores
+    for (let resultCard in finalResult) {
+        nextJob = finalResult[resultCard].role
+        let resultCardDiv = document.createElement("div")
+        let heading = document.createElement("h5");
+        let headingText = document.createTextNode(resultObj.resultsList[nextJob]['title'])
+        let content = document.createElement("p");
+        let contentText = document.createTextNode(resultObj.resultsList[nextJob]['content'])
+        let image = document.createElement("img");
+        let link = document.createElement("a")
+        let linkText = document.createTextNode("Learn more about " + nextJob + "!")
+        let percentage = document.createElement('p')
+        let percentageText = findPercentage(finalResult[resultCard].points)
+        link.className = "btn btn-primary white-link"
+
+        percentage.className = "percentage"
+        percentage.innerHTML = (percentageText + "%")
+        resultCardDiv.className = "results-card"
+        image.src = resultObj.resultsList[nextJob]['photo'];
+        link.href = resultObj.resultsList[nextJob]['link'];
+
+
+        heading.appendChild(headingText)
+        content.appendChild(contentText)
+        link.appendChild(linkText)
+
+        resultCardDiv.append(heading, percentage, contentText, image, link);
+        resultDiv.appendChild(resultCardDiv);
+        resultsModal.style.display = "none"
+        allResultsModal.style.display = "inline-block"
+    }
+>>>>>>> f901c36326ea2caa283e9f2fa30c7755ea7fd892
 }
 
 document.addEventListener(
