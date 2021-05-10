@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Quiz</title>
 </head>
-<body>
-    <header></header>
+
+<body id="quiz">
+    <h1 id="quiz-title">Find your perfect tech role!</h1>
     <section>
-        <h2>Question goes here</h2>
-        <form>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 1</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 2</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 3</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 4</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 5</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 6</label>
-            <br>
-            <input type="radio" id="" name="question-one" value="">
-            <label for="">answer 7</label>
-        </form>
-        <button type="submit">Next</button>
+        <div class="vertical-center">
+            <div id="quiz-container">
+                <h2 id="question">Question goes here</h2>
+                <form onsubmit="return false;">
+                    <ul>
+                        <li>
+                            <input type="radio" id="answerOne" class="reset-btn" name="question-one" value="manager">
+                            <label for="answerOne" id="answerOneLabel">answer 1</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="answerTwo" class="reset-btn" name="question-one" value="maths">
+                            <label for="answerTwo" id="answerTwoLabel">answer 2</label></li>
+                        <li>
+                            <input type="radio" id="answerThree" class="reset-btn" name="question-one" value="web">
+                            <label for="answerThree" id="answerThreeLabel">answer 3</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="answerFour" class="reset-btn" name="question-one" value="cyber">
+                            <label for="answerFour" id="answerFourLabel">answer 4</label></ul>
+                        </li>                    
+                    <br>
+
+                    <button id="next" onclick=nextQuestion() class="next-btn" type="submit">Next</button>
+                </form>
+
+                <button type="submit" id="results-btn" onclick=showResult() class="next-btn">View Results</button>
+            </div>
+        </div>
     </section>
+    </div>
+    <!-- Modal for results -->
+    <div class="container modal" id="results-modal">
+        
+       <div class="row">
+          <div class="col-12">
+              <div class="card" style="width: 40rem;">
+                <button class="button-close-modal">X</button>
+                 <img class="image mx-auto" src="assets/images/software-dev.jpg" alt="Card image cap" id="job-image">
+                 <div class="card-body">
+                 <h5 class="card-title" id="job-title">Software Developer</h5>
+                 <p class="card-text" id="job-content">
+                                      The role of a software developer engages in identifying, designing, installing and testing a software system 
+                                      they have built for a company from the ground up. It can range from creating internal programmes that can help businesses be more
+                                      efficient to producing systems that can be sold on the open market. Once software developers have delivered the final software 
+                                      system, they will also help in maintaining and updating the programme to ensure that all security problems are fixed, and it 
+                                      operates with new databases. In a role of a software developer they create the applications that allow people to do specific
+                                        tasks on a computer or mobile and others develop the underlying systems that control networks.
+                 </p>
+                 <a href="resources.html" class="btn btn-primary" id="job-link">Learn More About Software Developer</a>
+                 <br>
+                 <br>
+                 <a href="resources.html" class="btn btn-primary" id="all-roles">View All Roles</a>
+                 
+                 </div>
+             </div>
+           </div>
+           <div class="col-12 center">
+            <a class="try-again-btn" href="quiz.html">Try Quiz Again</a>
+         </div>
+         </div>
+    </div>
+
+    <!-- Modal for all results -->
+        <div class="container modal" id="all-results-modal">
+       <div class="row">
+          <div class="col-12">
+              <div id="results-div"></div>              
+           <div class="col-12 center">
+            <a class="try-again-btn" href="quiz.html">Try Quiz Again</a>
+         </div>
+         </div>
+    </div>
+
     <footer></footer>
-    
+    <script type="text/javascript" src="questions.json"></script>
+    <script src="assets/js/quiz.js"></script>
 </body>
+
 </html>

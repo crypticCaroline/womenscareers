@@ -1,3 +1,4 @@
+// HEADLINE ANIMATION
 document.addEventListener("DOMContentLoaded", function (event) {
   // array with texts to type in typewriter
   var dataText = [
@@ -44,3 +45,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // start the text animation
   StartTextAnimation(0);
 });
+
+// QUESTION DISPLAY MODAL
+// CONSTANT
+const modal = document.getElementById("results-modal");
+const closeModal = document.getElementById("close-modal"); // FUNCTIONS
+
+// FUNCTIONS
+// open the modal when the user clicks on the button
+openModal = () => {
+  modal.style.display = "block";
+};
+// close the modal when the user clicks on the <span> (X)
+close = () => {
+  modal.style.display = "none";
+};
+// close the modal when the user clicks anywhere outside of the modal
+anyWhereClose = (event) => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+// EVENTS
+closeModal.addEventListener("click", close);
+window.addEventListener("click", anyWhereClose);
