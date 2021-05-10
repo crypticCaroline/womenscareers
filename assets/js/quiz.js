@@ -1,3 +1,4 @@
+// Variables for project
 let finalResult;
 let questionNumber = 0;
 const next = document.getElementById("next");
@@ -106,6 +107,8 @@ let jobList = [
     groups: ["teamwork2", "problemsolving1", "creativity4", "curiosity2"],
   },
 ];
+
+// Functions
 
 function nextQuestion() {
   for (i = 0; i < radioBtns.length; i++) {
