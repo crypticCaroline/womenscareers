@@ -584,8 +584,13 @@ label {
   text-align: center;
 }
 
+.resources li a {
+    text-decoration: underline;
+    color:white;
+}
+
 #all-careers p,
-#all-careers a, #results-card p, #results-card a{
+ #results-card p, #results-card a{
     display: flex;
     justify-content: space-evenly;
 }
