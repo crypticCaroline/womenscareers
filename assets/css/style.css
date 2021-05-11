@@ -506,14 +506,7 @@ label {
     justify-content: space-evenly;
 }
 
-#all-careers a,
-#results-card a,
-.white-link {
-    text-decoration: underline;
-    color: #0b525b;
-    font-size: 1rem;
-    background-color: #f7fcff;
-}
+
 
 #all-careers a:hover {
     font-size-adjust: 110%;
@@ -586,7 +579,10 @@ label {
     color: #0b525b;
     font-size: 1rem;
     background-color: #f7fcff;
+    margin-top: 10px;
+    
 }
+
 
 #all-careers a:hover {
     font-size-adjust: 110%;
